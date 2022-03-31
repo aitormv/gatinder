@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Formulario para insertar</title>
+</head>
+<body>
+	<form th:object="${protectora}" method="post" action="/protectora/insertar">
+		<p>Denominacion: <input type="text" th:field="*{denominacion}"></p>
+		<p>Localidad: <input type="text" th:field="*{localidad}"></p>
+		<p>Telefono: <input type="number" th:field="*{telefono}"></p>
+		<p>Email: <input type="email" th:field="*{email}"></p>
+		<p>Nombre de usuario: <input type="text" th:field="*{nombreUsuario}"></p>
+		<p>Password: <input type="password" th:field="*{password}"></p>
+		<p>Foto de perfil: <input type="file" th:field="*{fotoPerfil}"></p>
+		<p><input type="submit" value="Inserta una protectora"></p>
+	</form>
+</body>
+</html>

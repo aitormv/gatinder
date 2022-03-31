@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Formulario para modificar</title>
+</head>
+<body>
+	<form th:object="${gato}" method="post" action="/gato/modificar">
+		<p>Nuevo nombre: <input type="text" th:field="*{nombre}"></p>
+		<p>Nuevo sexo: <select th:field="*{sexo}"><option value="varon">varon</option><option value="hembra">hembra</option></select></p>
+		<p>Nueva edad: <input type="number" th:field="*{edad}"></p>
+		<p>Nueva descripcion: <input type="text" th:field="*{descripcion}"></p>
+		<p>Nuevo acogido: <select th:field="*{acogido}"><option value="true">true</option><option value="false">false</option></select></p>
+		<p>Nuevo adoptado: <select th:field="*{adoptado}"><option value="true">true</option><option value="false">false</option></select></p>
+		<p>Nueva foto: <input type="file" th:field="*{foto}"></p>
+		<p>Nuevo usuario: <input type="text" th:field="*{usuario}"></p>
+		<p>Nueva protectora: <input type="text" th:field="*{protectora}"></p>
+		<input type="hidden" th:field="*{idgato}">
+		<p><input type="submit" value="Modifica un gato"></p>
+	</form>
+</body>
+</html>

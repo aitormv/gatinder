@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Formulario para insertar</title>
+</head>
+<body>
+	<form th:object="${gato}" method="post" action="/gato/insertar">
+		<p>Nombre: <input type="text" th:field="*{nombre}"></p>
+		<p>Sexo: <select th:field="*{sexo}"><option value="varon">varon</option><option value="hembra">hembra</option></select></p>
+		<p>Edad: <input type="number" th:field="*{edad}"></p>
+		<p>Descripcion: <input type="text" th:field="*{descripcion}"></p>
+		<p>Acogido: <select th:field="*{acogido}"><option value="true">true</option><option value="false">false</option></select></p>
+		<p>Adoptado: <select th:field="*{adoptado}"><option value="true">true</option><option value="false">false</option></select></p>
+		<p>Foto: <input type="file" th:field="*{foto}"></p>
+		<p>Usuario: <input type="text" th:field="*{usuario}"></p>
+		<p>Protectora: <input type="text" th:field="*{protectora}"></p>
+		<p><input type="submit" value="Inserta un gato"></p>
+	</form>
+</body>
+</html>

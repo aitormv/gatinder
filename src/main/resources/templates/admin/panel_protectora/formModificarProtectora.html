@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Formulario para modificar</title>
+</head>
+<body>
+	<form th:object="${protectora}" method="post" action="/protectora/modificar">
+		<p>Nueva denominacion: <input type="text" th:field="*{denominacion}"></p>
+		<p>Nueva localidad: <input type="text" th:field="*{localidad}"></p>
+		<p>Nuevo telefono: <input type="number" th:field="*{telefono}"></p>
+		<p>Nuevo email: <input type="email" th:field="*{email}"></p>
+		<p>Nuevo nombre de usuario: <input type="text" th:field="*{nombreUsuario}"></p>
+		<p>Nuevo password: <input type="password" th:field="*{password}"></p>
+		<p>Nueva foto de perfil: <input type="file" th:field="*{fotoPerfil}"></p>
+		<input type="hidden" th:field="*{idprotectora}">
+		<p><input type="submit" value="Modifica una protectora"></p>
+	</form>
+</body>
+</html>

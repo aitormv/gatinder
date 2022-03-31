@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Oswald&family=Shizuru&display=swap');
+
+h1, h2, h3 {
+    font-family: 'Shizuru', cursive;
+    text-align: center;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    margin: none;
+    padding: 0;
+    background: #429EA6;
+    color: #ECEBE4;
+    font-family: Arial, Helvetica, sans-serif;
+}

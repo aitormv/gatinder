@@ -1,0 +1,15 @@
+.columnasRegistro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.registroProtectora, .registroUsuario {
+    display: flex-item;
+    padding: 10px;
+    border-style: solid;
+    border-color: #CC998D;
+    border-radius: 15px;
+    border-width: 2.5px;
+}

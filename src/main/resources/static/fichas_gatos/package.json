@@ -1,0 +1,12 @@
+{
+  "name": "servidor-base-datos",
+  "version": "1.0.0",
+  "description": "prueba",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "AMV",
+  "license": "ISC"
+}

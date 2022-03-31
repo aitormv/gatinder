@@ -1,0 +1,12 @@
+h1 {
+    position: relative;
+    top: 150px;
+}
+
+.login {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 150px;
+    text-align: center;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es-es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../../../static/estilos.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/registro/estilos.css">
+    <script src="../../../static/registro/script.js"></script>
+    <title>Página de registro</title>
+</head>
+
+<body>
+    <h1>REGISTRO</h1>
+    <div class="columnasRegistro">
+        <div class="registroProtectora">
+            <h2>SOY UNA PROTECTORA</h2>
+            <form action="#" method="get" name="form_protectora">
+                <p>Denominación: <label for="den"><input type="text" size="20"></label></p>
+                <p>Localidad: <label for="loc"><input type="text" size="20"></label></p>
+                <p>Teléfono: <label for="tel"><input type="tel" size="10" pattern="[0-9]{9}"></label></p>
+                <p>Correo electrónico: <label for="cor"><input type="email" size="20"></label></p>
+                <p>Nombre de usuario: <label for="den"><input type="text" size="20"></label></p>
+                <p>Contraseña: <label for="den"><input type="password" size="20"></label></p>
+                <p>Foto de perfil: <label for="imagenPerfil"><input type="file" name="imagen"></label></p>
+                <a href="#"><label for="enviarProtectora"><input type="submit" value="Registrarse"></label></a>
+            </form>
+        </div>
+        <div class="registroUsuario">
+            <h2>SOY UN ADOPTANTE</h2>
+            <form action="#" method="get" name="form_adoptante">
+                <p>Nombre: <label for="nom"><input type="text" size="20"></label></p>
+                <p>Apellidos: <label for="ape"><input type="text" size="20"></label></p>
+                <form action="#" method="get" name="form_radio"></form>
+                    <p>Sexo:
+                        <input type="radio" name="sexo" value="mas" id="pregunta_mas"/>
+                        <label for="pregunta_mas">Masculino</label>
+                        <input type="radio" name="sexo" value="fem" id="pregunta_fem"/>
+                        <label for="pregunta_fem">Femenino</label>
+                    </p>
+                </form>
+                <p>Fecha de nacimiento: <label for="fec"><input type="date"></label></p>
+                <p>Localidad: <label for="loc"><input type="text" size="20"></label></p>
+                <p>Teléfono: <label for="tel"><input type="tel" size="10" pattern="[0-9]{9}"></label></p>
+                <p>Correo electrónico: <label for="cor"><input type="email" size="20"></label></p>
+                <p>Nombre de usuario: <label for="den"><input type="text" size="20"></label></p>
+                <p>Contraseña: <label for="den"><input type="password" size="20"></label></p>
+                <p>Foto de perfil: <label for="imagenPerfil"><input type="file" name="imagen"></label></p>
+                <a href="#"><label for="enviarAdoptante"><input type="submit" value="Registrarse"></label></a>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
