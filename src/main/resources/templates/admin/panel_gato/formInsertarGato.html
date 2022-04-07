@@ -7,7 +7,7 @@
 <body>
 	<form th:object="${gato}" method="post" action="/gato/insertar">
 		<p>Nombre: <input type="text" th:field="*{nombre}"></p>
-		<p>Sexo: <select th:field="*{sexo}"><option value="varon">varon</option><option value="hembra">hembra</option></select></p>
+		<p>Sexo: <select th:field="*{sexo}"><option value="macho">macho</option><option value="hembra">hembra</option></select></p>
 		<p>Edad: <input type="number" th:field="*{edad}"></p>
 		<p>Descripcion: <input type="text" th:field="*{descripcion}"></p>
 		<p>Acogido: <select th:field="*{acogido}"><option value="true">true</option><option value="false">false</option></select></p>

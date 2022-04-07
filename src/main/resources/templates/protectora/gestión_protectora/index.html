@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es-es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <link rel="stylesheet" type="text/css" href="gestión_protectora/estilos.css">
+    <script src="gestión_protectora/script.js"></script>
+    <title>Página de gestión de protectora</title>
+</head>
+
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="#" class="botonInsertar">INSERTAR FICHA</a></li>
+            <li><a href="#">CHAT</a></li>
+            <li><a href="#">BUSCADOR</a></li>
+            <li><a href="#">VISTA DE USUARIO</a></li>
+            <li><a href="#">VOLVER ATRÁS</a></li>
+        </ul>
+    </div>
+    <h1>GESTION DE PROTECTORA</h1>
+    <div class="contenedor-principal">
+        <div class="contenedor-mostrar"></div>
+        <div class="contenedor-form" enctype="multipart/form-data">
+            <form class="ficha">
+                <h1>INSERTAR/ACTUALIZAR FICHA DE GATO</h1>
+                <label class="form-label">Identificador</label>
+                <input name="id" id="id" type="number"><br><br>
+                <label class="form-label">¿Está acogido?</label>
+                <select name="acogido" id="acogido"><option value="1">Sí</option><option value="0">No</option></select><br><br>
+                <label class="form-label">¿Está adoptado?</label>
+                <select name="adoptado" id="adoptado"><option value="1">Sí</option><option value="0">No</option></select><br><br>
+                <label class="form-label">Descripción</label>
+                <input name="descripcion" id="descripcion" type="text"><br><br>
+                <label class="form-label">Edad</label>
+                <input name="edad" id="edad" type="number"><br><br>
+                <label class="form-label">Foto</label>
+                <input name="foto" id="foto" type="text"><br><br>
+                <label class="form-label">Nombre</label>
+                <input name="nombre" id="nombre" type="text"><br><br>
+                <label class="form-label">Sexo</label>
+                <select name="sexo" id="sexo"><option value="macho">Macho</option><option value="hembra">Hembra</option></select></p>
+                <button class="botonGuardar">GUARDAR DATOS</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

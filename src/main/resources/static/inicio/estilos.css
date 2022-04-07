@@ -1,30 +1,3 @@
-.menu ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    padding: 15px 5px 15px 5px;
-    text-align: center;
-    list-style: none;
-    font-weight: bold;
-}
-
-.menu ul a {
-    width: 100%;
-    padding: 10px 10px;
-    cursor: pointer;
-    transition: all 0.1s;
-    color: #CC998D;
-    background: #ECEBE4;
-    font-size: 1vw;
-    text-decoration: none;
-}
-
-.menu ul a:hover {
-    color: #ECEBE4;
-    background: #CC998D;
-}
-
 .presentacion {
     display: flex;
     flex-direction: column;
@@ -50,4 +23,17 @@
     font-size: 20px;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.footer {
+    height: 150px;
+    color: #ECEBE4;
+    background: #CC998D;
+}
+
+img {
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+    border-radius: 300px;
 }

@@ -1,0 +1,86 @@
+input, select, option {
+    padding: 5px 5px;
+    border: 1px solid #429EA6;
+    border-radius: 5px;
+    background: #ECEBE4;
+    color: #429EA6;
+    font-size: 15px;
+}
+
+button {
+    width: 150px;
+    height: 30px;
+    margin: 5px auto;
+    padding: 0 10px;
+    border: 2px solid #429EA6;
+    border-radius: 30px;
+    box-shadow: #429EA6 5px 5px 0 0;
+    color: #429EA6;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #ECEBE4;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+}
+
+.botonGuardar {
+    height: 40px;
+}
+
+.contenedor-principal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-mostrar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.fichaGato {
+    display: flex-item;
+    flex-direction: column;
+    width: 200px;
+    border-radius: 25px;
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    background-color: #CC998D;
+}
+
+.contenedor-form {
+    position: absolute;
+    display: flex-item;
+    flex-direction: column;
+    visibility: hidden;
+    top: 140px;
+    width: 460px;
+    height: 560px;
+    border: 3px solid #429EA6;
+    border-radius: 25px;
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    background-color: #CC998D;
+}
+
+.edit-id-disabled {
+    border: none;
+    outline: none;
+    pointer-events: none;
+    color: #429EA6;
+    background-color: #ECEBE4;
+}

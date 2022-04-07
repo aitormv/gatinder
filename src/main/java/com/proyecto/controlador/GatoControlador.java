@@ -20,40 +20,40 @@ public class GatoControlador {
 	@RequestMapping("/mostrar")
 	public String mostrar(Model modelo) {
 		modelo.addAttribute("gatos", sg.findAll());
-		return "gato/mostrarGatos";
+		return "admin/panel_gato/mostrarGatos";
 	}
 	
 	@RequestMapping("/formInsertar")
 	public String formInsertar(Model modelo) {
 		modelo.addAttribute("gato", new GatoVO());
-		return "gato/formInsertarGato";
+		return "admin/panel_gato/formInsertarGato";
 	}
 	
 	@RequestMapping("/insertar")
 	public String insertar(@ModelAttribute GatoVO gato, Model modelo) {
 		sg.save(gato);
 		modelo.addAttribute("gatos", sg.findAll());
-		return "gato/mostrarGatos";
+		return "admin/panel_gato/mostrarGatos";
 	}
 	
 	@RequestMapping("/eliminar")
 	public String eliminar(@RequestParam int idgato, Model modelo) {
 		sg.deleteById(idgato);
 		modelo.addAttribute("gatos", sg.findAll());
-		return "gato/mostrarGatos";
+		return "admin/panel_gato/mostrarGatos";
 	}
 	
 	@RequestMapping("/formModificar")
 	public String formModificar(@RequestParam int idgato, Model modelo){
 		modelo.addAttribute("gato", sg.findById(idgato).get());
-		return "gato/formModificarGato";
+		return "admin/panel_gato/formModificarGato";
 	}
 	
 	@RequestMapping("/modificar")
 	public String modificar(@ModelAttribute GatoVO gato, Model modelo) {
 		sg.save(gato);
 		modelo.addAttribute("gatos", sg.findAll());
-		return "gato/mostrarGatos";
+		return "admin/panel_gato/mostrarGatos";
 	}
 	
 }

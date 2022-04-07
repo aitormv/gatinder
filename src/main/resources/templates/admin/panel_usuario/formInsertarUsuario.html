@@ -8,7 +8,7 @@
 	<form th:object="${usuario}" method="post" action="/usuario/insertar">
 		<p>Nombre: <input type="text" th:field="*{nombre}"></p>
 		<p>Apellidos: <input type="text" th:field="*{apellidos}"></p>
-		<p>Sexo: <select th:field="*{sexo}"><option value="varon">varon</option><option value="hembra">hembra</option></select></p>
+		<p>Sexo: <select th:field="*{sexo}"><option value="hombre">hombre</option><option value="mujer">mujer</option><option value="otro">otro</option></select></p>
 		<p>Fecha de nacimiento: <input type="date" th:field="*{fechaNacimiento}"></p>
 		<p>Localidad: <input type="text" th:field="*{localidad}"></p>
 		<p>Telefono: <input type="number" th:field="*{telefono}"></p>

@@ -20,40 +20,40 @@ public class UsuarioControlador {
 	@RequestMapping("/mostrar")
 	public String mostrar(Model modelo) {
 		modelo.addAttribute("usuarios", su.findAll());
-		return "usuario/mostrarUsuarios";
+		return "admin/panel_usuario/mostrarUsuarios";
 	}
 	
 	@RequestMapping("/formInsertar")
 	public String formInsertar(Model modelo) {
 		modelo.addAttribute("usuario", new UsuarioVO());
-		return "usuario/formInsertarUsuario";
+		return "admin/panel_usuario/formInsertarUsuario";
 	}
 	
 	@RequestMapping("/insertar")
 	public String insertar(@ModelAttribute UsuarioVO usuario, Model modelo) {
 		su.save(usuario);
 		modelo.addAttribute("usuarios", su.findAll());
-		return "usuario/mostrarUsuarios";
+		return "admin/panel_usuario/mostrarUsuarios";
 	}
 	
 	@RequestMapping("/eliminar")
 	public String eliminar(@RequestParam int idusuario, Model modelo) {
 		su.deleteById(idusuario);
 		modelo.addAttribute("usuarios", su.findAll());
-		return "usuario/mostrarUsuarios";
+		return "admin/panel_usuario/mostrarUsuarios";
 	}
 	
 	@RequestMapping("/formModificar")
 	public String formModificar(@RequestParam int idusuario, Model modelo){
 		modelo.addAttribute("usuario", su.findById(idusuario).get());
-		return "usuario/formModificarUsuario";
+		return "admin/panel_usuario/formModificarUsuario";
 	}
 	
 	@RequestMapping("/modificar")
 	public String modificar(@ModelAttribute UsuarioVO usuario, Model modelo) {
 		su.save(usuario);
 		modelo.addAttribute("usuarios", su.findAll());
-		return "usuario/mostrarUsuarios";
+		return "admin/panel_usuario/mostrarUsuarios";
 	}
 
 }

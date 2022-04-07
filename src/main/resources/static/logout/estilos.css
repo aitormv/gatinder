@@ -3,16 +3,10 @@ h1 {
     top: 150px;
 }
 
-.login {
+.logout {
     position: relative;
     display: flex;
     flex-direction: column;
     top: 150px;
     text-align: center;
-}
-
-.error {
-	position: relative;
-	top: 300px;
-	text-align: center;
 }

@@ -20,40 +20,40 @@ public class ProtectoraControlador {
 	@RequestMapping("/mostrar")
 	public String mostrar(Model modelo) {
 		modelo.addAttribute("protectoras", sp.findAll());
-		return "protectora/mostrarProtectoras";
+		return "admin/panel_protectora/mostrarProtectoras";
 	}
 	
 	@RequestMapping("/formInsertar")
 	public String formInsertar(Model modelo) {
 		modelo.addAttribute("protectora", new ProtectoraVO());
-		return "protectora/formInsertarProtectora";
+		return "admin/panel_protectora/formInsertarProtectora";
 	}
 	
 	@RequestMapping("/insertar")
 	public String insertar(@ModelAttribute ProtectoraVO protectora, Model modelo) {
 		sp.save(protectora);
 		modelo.addAttribute("protectoras", sp.findAll());
-		return "protectora/mostrarProtectoras";
+		return "admin/panel_protectora/mostrarProtectoras";
 	}
 	
 	@RequestMapping("/eliminar")
 	public String eliminar(@RequestParam int idprotectora, Model modelo) {
 		sp.deleteById(idprotectora);
 		modelo.addAttribute("protectoras", sp.findAll());
-		return "protectora/mostrarProtectoras";
+		return "admin/panel_protectora/mostrarProtectoras";
 	}
 	
 	@RequestMapping("/formModificar")
 	public String formModificar(@RequestParam int idprotectora, Model modelo){
 		modelo.addAttribute("protectora", sp.findById(idprotectora).get());
-		return "protectora/formModificarProtectora";
+		return "admin/panel_protectora/formModificarProtectora";
 	}
 	
 	@RequestMapping("/modificar")
 	public String modificar(@ModelAttribute ProtectoraVO protectora, Model modelo) {
 		sp.save(protectora);
 		modelo.addAttribute("protectoras", sp.findAll());
-		return "protectora/mostrarProtectoras";
+		return "admin/panel_protectora/mostrarProtectoras";
 	}
 
 }
