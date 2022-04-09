@@ -8,7 +8,7 @@ window.onload = function () {
     fetchGatos();
 
     function fetchGatos() {
-        fetch("http://localhost:8888/gatos")
+        fetch("http://localhost:8181/api/gatos")
         .then(response => response.json())
         .then(gatos => fichasGatos(gatos));
     };
@@ -58,7 +58,7 @@ window.onload = function () {
 
                 document.querySelector("#id").classList.add("edit-id-disabled");
         
-                let datos = await fetch(`http://localhost:8888/gatos/${id}`);
+                let datos = await fetch(`http://localhost:8181/api/gatos/${id}`);
                 let gatos = await datos.json();
         
                 ficha.id.value = gatos[0].idgato;
@@ -74,11 +74,11 @@ window.onload = function () {
             botonEliminar.addEventListener("click", async function eliminarGato(e) {
                 id = e.target.parentNode.children[1].innerHTML.slice(22, 24);
                 if(confirm("¿Confirmas el borrado de la ficha?")) {
-                    respuesta = await fetch(`/gatos/${id}`, {
+                    respuesta = await fetch(`/api/gatos/${id}`, {
                         method: "DELETE"
                     });
                     console.log("Borrado correcto...", await respuesta.json());
-                    window.open("/");
+                    window.open("/protectora");
                 }
             });
 
@@ -104,7 +104,7 @@ window.onload = function () {
     
         switch(operacion) {
             case "update":
-                respuesta = await fetch(`/gatos/${id}`, {
+                respuesta = await fetch(`/api/gatos/${id}`, {
                     headers: {"Access-Control-Allow-Origin":"*", "Content-Type":"application/json; charset=utf-8"},
                     method: "PUT",
                     body: JSON.stringify(formJSON)
@@ -112,7 +112,7 @@ window.onload = function () {
                 break;
         
             case "insert":
-                respuesta = await fetch(`/gatos`, {
+                respuesta = await fetch(`/api/gatos`, {
                     headers: {"Access-Control-Allow-Origin":"*", "Content-Type":"application/json; charset=utf-8"},
                     method: "POST",
                     body: JSON.stringify(formJSON)

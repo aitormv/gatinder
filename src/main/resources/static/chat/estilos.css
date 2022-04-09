@@ -1,0 +1,35 @@
+body {
+	padding: 10px;
+}
+
+form {
+    margin: 15px 0;
+}
+
+form input[type="text"] {
+	position: relative;
+	top: 550px;
+	width: 75%;
+	padding: 5px;
+    border: 2px solid #CC998D;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+	position: relative;
+	top: 550px;
+	width: 20%;
+	padding: 5px 5px;
+    border: none;
+    border-radius: 5px;
+    background: #CC998D;
+    color: #ECEBE4;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.historial {
+	height: 550px;
+	border: 2px solid #CC998D;
+    background: #ECEBE4;
+}

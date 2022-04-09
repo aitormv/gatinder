@@ -17,12 +17,6 @@ public class IndexControlador {
 		return "logout/index";
 	}
 	
-	@RequestMapping("/cerrar")
-	public void cerrar() {
-		System.exit(0);
-		return;
-	}
-	
 	@RequestMapping("/registro")
 	public String registro() {
 		return "registro/index";
@@ -38,6 +32,11 @@ public class IndexControlador {
 		return "registrado/usuario_registrado/index";
 	}
 	
+	@RequestMapping("perfil")
+	public String perfil() {
+		return "registrado/perfil_usuario/index";
+	}
+	
 	@RequestMapping("/protectora")
 	public String protectora() {
 		return "protectora/gestión_protectora/index";
@@ -46,6 +45,22 @@ public class IndexControlador {
 	@RequestMapping("/admin")
 	public String admin() {
 		return "admin/panel/mostrar";
+	}
+	
+	@RequestMapping("/chat")
+	public String chat() {
+		return "chat/index";
+	}
+	
+	@RequestMapping("/403")
+	public String error() {
+		return "403page";
+	}
+	
+	@RequestMapping("/cerrar")
+	public void cerrar() {
+		System.exit(0);
+		return;
 	}
 
 }

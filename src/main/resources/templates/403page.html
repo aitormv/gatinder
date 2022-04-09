@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Acceso denegado</title>
+</head>
+<body>
+	<h3 th:if="${message}!=null" th:text="${message}"></h3>
+	<div th:if="${userInfo}!=null" th:text="${userInfo}"></div>
+	<a href="/">VOLVER ATRAS</a>
+</body>
+</html>

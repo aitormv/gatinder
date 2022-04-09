@@ -7,4 +7,6 @@ import com.proyecto.modelo.UsuarioVO;
 @Repository
 public interface UsuarioRepositorio extends CrudRepository<UsuarioVO, Integer> {
 
+	UsuarioVO findByNombreUsuario(String nombreUsuario);
+
 }

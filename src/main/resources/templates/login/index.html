@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-es" xmlns="http://w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecturity3">
+<html lang="es-es" xmlns="http://w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head>
     <meta charset="UTF-8">
@@ -20,13 +20,16 @@
     <h1>LOGIN</h1>
     <div class="login">
         <form th:action="@{/login}" method="post" name="form_login">
-            <label for="usuario">Usuario: <input type="text" name="usuario" size="20"></label><br><br>
+            <label for="usuario">Usuario: <input type="text" name="nombreUsuario" size="20"></label><br><br>
             <label for="password">Contraseña: <input type="password" name="password" size="20"></label><br><br>
             <input type="submit" value="Entrar">
         </form>
     </div>
     <div class="error" th:if="${param.error}">
     	<p>Usuario o password inválidos</p>
+    </div>
+    <div class="logout" th:if="${param.logout}">
+    	<p>Has hecho logout</p>
     </div>
 </body>
 

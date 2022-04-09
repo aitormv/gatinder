@@ -1,6 +1,10 @@
 package com.proyecto.servicio;
 
 import java.util.Optional;
+
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
 import com.proyecto.modelo.UsuarioVO;
 
 public interface ServicioUsuario {
@@ -28,5 +32,9 @@ public interface ServicioUsuario {
 	void deleteAll(Iterable<? extends UsuarioVO> entities);
 
 	void deleteAll();
+
+	UserDetails loadUserByUsername(String nombreUsuario) throws UsernameNotFoundException;
+
+	UsuarioVO findByNombreUsuario(String nombreUsuario);
 
 }
