@@ -31,7 +31,7 @@ public class GatoWS {
 	@Autowired
 	ServicioGato sg;
 	
-	@CrossOrigin(origins = "http://localhost:8181")
+	@CrossOrigin(origins = "http://localhost:8181/api/gatos")
 	@GetMapping("")
 	public ResponseEntity<?> findAll() {
 		List<GatoDTO> lista = new ArrayList<GatoDTO>();
@@ -39,7 +39,7 @@ public class GatoWS {
 		return new ResponseEntity<List<GatoDTO>>(lista, HttpStatus.OK);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8181")
+	@CrossOrigin(origins = "http://localhost:8181/api/gatos")
 	@GetMapping("/{idgato}")
 	public ResponseEntity<?> findById(@PathVariable int idgato) {
 		try {
@@ -50,7 +50,7 @@ public class GatoWS {
 		}
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8181")
+	@CrossOrigin(origins = "http://localhost:8181/api/gatos")
 	@PostMapping("/insertar")
 	public ResponseEntity<?> insertar(@RequestBody GatoDTO gato) {
 		try {
@@ -64,7 +64,7 @@ public class GatoWS {
 		}
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8181")
+	@CrossOrigin(origins = "http://localhost:8181/api/gatos")
 	@PutMapping("/actualizar")
 	public ResponseEntity<?> actualizar(@RequestBody GatoDTO gato) {
 		try {
@@ -78,7 +78,7 @@ public class GatoWS {
 		}
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8181")
+	@CrossOrigin(origins = "http://localhost:8181/api/gatos")
 	@DeleteMapping("/eliminar")
 	public ResponseEntity<?> eliminar(@RequestParam int idgato) {
 		try {
@@ -89,7 +89,7 @@ public class GatoWS {
 		}
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8181")
+	@CrossOrigin(origins = "http://localhost:8181/api/gatos")
 	@DeleteMapping("/eliminarTodo")
 	public ResponseEntity<?> eliminarTodo() {
 		try {
