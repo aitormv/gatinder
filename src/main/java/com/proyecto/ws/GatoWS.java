@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,6 +31,7 @@ public class GatoWS {
 	@Autowired
 	ServicioGato sg;
 	
+	@CrossOrigin(origins = "http://localhost:8181")
 	@GetMapping("")
 	public ResponseEntity<?> findAll() {
 		List<GatoDTO> lista = new ArrayList<GatoDTO>();
@@ -37,6 +39,7 @@ public class GatoWS {
 		return new ResponseEntity<List<GatoDTO>>(lista, HttpStatus.OK);
 	}
 	
+	@CrossOrigin(origins = "http://localhost:8181")
 	@GetMapping("/{idgato}")
 	public ResponseEntity<?> findById(@PathVariable int idgato) {
 		try {
@@ -47,6 +50,7 @@ public class GatoWS {
 		}
 	}
 	
+	@CrossOrigin(origins = "http://localhost:8181")
 	@PostMapping("/insertar")
 	public ResponseEntity<?> insertar(@RequestBody GatoDTO gato) {
 		try {
@@ -60,6 +64,7 @@ public class GatoWS {
 		}
 	}
 	
+	@CrossOrigin(origins = "http://localhost:8181")
 	@PutMapping("/actualizar")
 	public ResponseEntity<?> actualizar(@RequestBody GatoDTO gato) {
 		try {
@@ -73,6 +78,7 @@ public class GatoWS {
 		}
 	}
 	
+	@CrossOrigin(origins = "http://localhost:8181")
 	@DeleteMapping("/eliminar")
 	public ResponseEntity<?> eliminar(@RequestParam int idgato) {
 		try {
@@ -83,6 +89,7 @@ public class GatoWS {
 		}
 	}
 	
+	@CrossOrigin(origins = "http://localhost:8181")
 	@DeleteMapping("/eliminarTodo")
 	public ResponseEntity<?> eliminarTodo() {
 		try {
