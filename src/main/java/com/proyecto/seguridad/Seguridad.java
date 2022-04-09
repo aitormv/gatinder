@@ -32,12 +32,12 @@ public class Seguridad extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		//http.csrf().disable();
-		http.authorizeRequests().antMatchers("/admin").access("hasRole('admin')");
+		http.csrf().disable();
+		/*http.authorizeRequests().antMatchers("/admin").access("hasRole('admin')");
 		http.authorizeRequests().antMatchers("/registrado").access("hasAnyRole('registrado','admin')");
 		http.authorizeRequests().antMatchers("/protectora").access("hasAnyRole('protectora','admin')");
 		http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
-		//http.authorizeRequests().and().formLogin().loginPage("/login").failureUrl("/login?error=true");
+		http.authorizeRequests().and().formLogin().loginPage("/login").failureUrl("/login?error=true");*/
 	}
 
 }
