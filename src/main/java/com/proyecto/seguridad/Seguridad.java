@@ -30,14 +30,14 @@ public class Seguridad extends WebSecurityConfigurerAdapter {
 		.and().withUser("protectora").password(encripta("temporal")).roles("protectora");
 	}
 	
-	/*@Override
+	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
 		http.authorizeRequests().antMatchers("/admin").access("hasRole('admin')");
 		http.authorizeRequests().antMatchers("/registrado").access("hasAnyRole('registrado','admin')");
 		http.authorizeRequests().antMatchers("/protectora").access("hasAnyRole('protectora','admin')");
 		http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
-		http.authorizeRequests().and().formLogin().loginPage("/login").permitAll();//.failureUrl("/login?error=true");
-	}*/
+		//http.authorizeRequests().and().formLogin().loginPage("/login").failureUrl("/login?error=true");
+	}
 
 }
