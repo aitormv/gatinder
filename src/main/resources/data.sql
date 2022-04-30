@@ -1,0 +1,3 @@
+INSERT INTO roles (nombre) VALUES ("ROLE_REGISTRADO");
+INSERT INTO roles (nombre) VALUES ("ROLE_PROTECTORA");
+INSERT INTO roles (nombre) VALUES ("ROLE_ADMIN");
