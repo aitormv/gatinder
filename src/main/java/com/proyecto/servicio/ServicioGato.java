@@ -29,5 +29,7 @@ public interface ServicioGato {
 	void deleteAll(Iterable<? extends GatoVO> entities);
 
 	void deleteAll();
+	
+	GatoVO findByNombre(String nombre);
 
 }

@@ -6,5 +6,7 @@ import com.proyecto.modelo.GatoVO;
 
 @Repository
 public interface GatoRepositorio extends CrudRepository<GatoVO, Integer> {
+	
+	GatoVO findByNombre(String nombre);
 
 }

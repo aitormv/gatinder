@@ -30,4 +30,6 @@ public interface ServicioProtectora {
 
 	void deleteAll();
 
+	ProtectoraVO findByNombreUsuario(String nombreUsuario);
+
 }

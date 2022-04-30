@@ -7,4 +7,6 @@ import com.proyecto.modelo.ProtectoraVO;
 @Repository
 public interface ProtectoraRepositorio extends CrudRepository<ProtectoraVO, Integer> {
 
+	ProtectoraVO findByNombreUsuario(String nombreUsuario);
+
 }

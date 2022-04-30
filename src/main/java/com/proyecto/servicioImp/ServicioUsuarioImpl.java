@@ -12,7 +12,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import com.proyecto.modelo.ProtectoraVO;
 import com.proyecto.modelo.UsuarioVO;
+import com.proyecto.repositorio.ProtectoraRepositorio;
 import com.proyecto.repositorio.UsuarioRepositorio;
 import com.proyecto.servicio.ServicioUsuario;
 
@@ -22,6 +25,9 @@ public class ServicioUsuarioImpl implements UserDetailsService, ServicioUsuario 
 	@Autowired
 	private UsuarioRepositorio ur;
 	
+	@Autowired
+	private ProtectoraRepositorio pr;
+	
 	@Override
 	public UsuarioVO findByNombreUsuario(String nombreUsuario) {
 		return ur.findByNombreUsuario(nombreUsuario);
@@ -29,10 +35,26 @@ public class ServicioUsuarioImpl implements UserDetailsService, ServicioUsuario 
 
 	@Override
 	public UserDetails loadUserByUsername(String nombreUsuario) throws UsernameNotFoundException {
+		
 		UsuarioVO usuario = ur.findByNombreUsuario(nombreUsuario);
+		ProtectoraVO protectora = pr.findByNombreUsuario(nombreUsuario);
+		
+		if (usuario == null && protectora == null) {
+			throw new UsernameNotFoundException("El usuario " + nombreUsuario + " no existe en la base de datos");
+		}
 		
 		if (usuario == null) {
-			throw new UsernameNotFoundException("El usuario " + nombreUsuario + " no existe en la base de datos");
+			
+			List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();
+			
+			if (protectora.getRol()!=null) {
+				GrantedAuthority authority = new SimpleGrantedAuthority(protectora.getRol().getNombre());
+				grantList.add(authority);
+			}
+				
+			UserDetails userDetails = (UserDetails) new User(protectora.getNombreUsuario(), protectora.getPassword(), grantList);
+			
+			return userDetails;
 		}
 		
 		List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();

@@ -4,15 +4,17 @@ window.onload = function () {
 
     fetchGatos();
 
-    function fetchGatos() {
-        fetch("http://localhost:8181/api/gatos")
-        .then(response => response.json())
-        .then(gatos => fichasGatos(gatos));
+    async function fetchGatos() {
+		let respuesta = await fetch('/api/gatos');
+		let gatos = await respuesta.json();	
+		fichasGatos(gatos)
     };
 
     function fichasGatos(gatos) {
+	
+		let seleccion = gatos.filter(gato => gato.adoptado == 0);
 
-        for(gato of gatos) {
+        for(gato of seleccion) {
 
             if(gato.idgato == undefined) {
                 return;
@@ -29,9 +31,9 @@ window.onload = function () {
             let foto = document.createElement("img");
             foto.src = gato.foto;
             foto.classList.add("fotoGato");
-        
             let fichaGato = document.createElement("div");
             fichaGato.classList.add("fichaGato");
+
             fichaGato.appendChild(foto);
             fichaGato.appendChild(id);
             fichaGato.appendChild(nombre);

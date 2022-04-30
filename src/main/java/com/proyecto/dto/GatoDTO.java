@@ -1,9 +1,5 @@
 package com.proyecto.dto;
 
-
-import com.proyecto.modelo.ProtectoraVO;
-import com.proyecto.modelo.UsuarioVO;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,7 +17,14 @@ public class GatoDTO {
 	private boolean acogido;
 	private boolean adoptado;
 	private String foto;
-	private UsuarioVO usuario;
-	private ProtectoraVO protectora;
-
+	private String nombreUsuario;
+	private String nombreProtectora;
+	
+	@Override
+	public String toString() {
+		return "GatoDTO [idgato=" + idgato + ", nombre=" + nombre + ", sexo=" + sexo + ", edad=" + edad
+				+ ", descripcion=" + descripcion + ", acogido=" + acogido + ", adoptado=" + adoptado + ", foto=" + foto
+				+ ", nombreUsuario=" + nombreUsuario + ", nombreProtectora=" + nombreProtectora + "]";
+	}
+	
 }

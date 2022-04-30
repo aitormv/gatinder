@@ -13,3 +13,9 @@
     border-radius: 15px;
     border-width: 2.5px;
 }
+
+.visualizarFotoU {
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+}

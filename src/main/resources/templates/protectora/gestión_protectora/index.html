@@ -16,25 +16,28 @@
         <ul>
             <li><a href="#" class="botonInsertar">INSERTAR FICHA</a></li>
             <li><a href="#" class="buscador">BUSCADOR</a></li>
+            <li><a href="#" class="modificar">MODIFICAR PERFIL</a></li>
             <li><a href="/chat">CHAT</a></li>
             <li><a href="/anonimo">VISTA DE USUARIO</a></li>
             <li><a href="/">VOLVER ATRÁS</a></li>
         </ul>
     </div>
     <h1>GESTION DE PROTECTORA</h1>
+    <h1 class="denominacionP"></h1>
+    <button class="mostrarFichas">MOSTRAR FICHAS</button>
     <div class="contenedor-principal">
         <div class="contenedor-mostrar"></div>
         <div class="contenedor-form">
             <form class="ficha">
                 <h1>INSERTAR/ACTUALIZAR FICHA DE GATO</h1>
                 <label class="form-label">Identificador</label>
-                <input name="id" id="id" type="number"><br><br>
+                <input name="idgato" id="idgato" type="number"><br><br>
                 <label class="form-label">¿Está acogido?</label>
-                <select name="acogido" id="acogido"><option value="1">Sí</option><option value="0">No</option></select><br><br>
+                <select name="acogido" id="acogido"><option value="true">Sí</option><option value="false">No</option></select><br><br>
                 <label class="form-label">¿Está adoptado?</label>
-                <select name="adoptado" id="adoptado"><option value="1">Sí</option><option value="0">No</option></select><br><br>
+                <select name="adoptado" id="adoptado"><option value="true">Sí</option><option value="false">No</option></select><br><br>
                 <label class="form-label">Descripción</label>
-                <input name="descripcion" id="descripcion" type="text"><br><br>
+                <input name="descripcion" id="descripcion" maxlength="30" title="Máximo de treinta caracteres" type="text"><br><br>
                 <label class="form-label">Edad</label>
                 <input name="edad" id="edad" type="number"><br><br>
                 <label class="form-label">Foto</label>
@@ -42,9 +45,36 @@
                 <label class="form-label">Nombre</label>
                 <input name="nombre" id="nombre" type="text"><br><br>
                 <label class="form-label">Sexo</label>
-                <select name="sexo" id="sexo"><option value="macho">Macho</option><option value="hembra">Hembra</option></select></p>
+                <select name="sexo" id="sexo"><option value="macho">Macho</option><option value="hembra">Hembra</option></select><br><br>
+                <label class="form-label">Nombre de usuario que acoge/adopta</label>
+                <input name="nombreUsuario" id="nombreUsuario" type="text"><br><br>
                 <button class="botonGuardar">GUARDAR DATOS</button>
+                <button class="botonCerrar">CERRAR FORMULARIO</button>
             </form>
+        </div>
+        <div class="contenedor-form-protectora">
+        	<form class="fichaProtectora">
+        		<h1>ACTUALIZAR PERFIL DE PROTECTORA</h1>
+        		<label for="idprotectora"><input type="hidden" name="idprotectora"></label>
+        	    <p>Denominación: <label for="denominacion"><input type="text" size="20" name="denominacion"></label></p>
+                <p>Localidad: <label for="localidad"><input type="text" size="20" name="localidad"></label></p>
+                <p>Teléfono: <label for="telefono"><input type="tel" size="10" pattern="[0-9]{9}" title="Formato de nueve números" name="telefono"></label></p>
+                <p>Correo electrónico: <label for="email"><input type="email" size="20" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Ejemplo: gatinder@ejemplo.es" name="email"></label></p>
+                <p>Nombre de usuario: <label for="nombreUsuario"><input type="text" size="20" name="nombreUsuario"></label></p>
+                <p>Contraseña: <label for="password"><input type="password" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Mínimo ocho caracteres, tiene que tener mayúsculas y minúsculas, así como un número" name="password"></label></p>
+                <p>Foto de perfil: <label for="fotoPerfil"><input type="text" name="fotoPerfil"></label></p>
+                <label for="idrol"><input type="hidden" value="2" name="idrol"></label>
+                <button class="botonGuardarProtectora">ACTUALIZAR DATOS</button>
+        	</form>
+        </div>
+        <div class="contenedor-buscar">
+            <input class="inputNombre" type="text">
+            <button class="botonFiltrar">BUSCAR</button>
+        </div>
+        <div class="confirmarBorrado">
+        	<p>¿Seguro que quieres eliminar la ficha?</p>
+        	<button class="borradoYes">ELIMINAR</button>
+        	<button class="borradoNo">VOLVER</button>
         </div>
     </div>
 </body>

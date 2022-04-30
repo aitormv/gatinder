@@ -14,6 +14,11 @@ public class ServicioProtectoraImpl implements ServicioProtectora {
 	private ProtectoraRepositorio pr;
 	
 	@Override
+	public ProtectoraVO findByNombreUsuario(String nombreUsuario) {
+		return pr.findByNombreUsuario(nombreUsuario);
+	}
+	
+	@Override
 	public <S extends ProtectoraVO> S save(S entity) {
 		return pr.save(entity);
 	}

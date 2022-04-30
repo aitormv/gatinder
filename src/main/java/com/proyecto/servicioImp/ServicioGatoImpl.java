@@ -13,6 +13,10 @@ public class ServicioGatoImpl implements ServicioGato {
 	@Autowired
 	private GatoRepositorio gr;
 
+	public GatoVO findByNombre(String nombre) {
+		return gr.findByNombre(nombre);
+	}
+
 	@Override
 	public <S extends GatoVO> S save(S entity) {
 		return gr.save(entity);

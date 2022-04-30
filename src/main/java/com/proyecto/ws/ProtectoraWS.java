@@ -1,15 +1,11 @@
 package com.proyecto.ws;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -18,41 +14,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.proyecto.dto.GatoDTO;
-import com.proyecto.modelo.GatoVO;
-import com.proyecto.servicio.ServicioGato;
-import com.proyecto.servicio.ServicioUsuario;
+import com.proyecto.dto.ProtectoraDTO;
+import com.proyecto.modelo.ProtectoraVO;
+import com.proyecto.seguridad.Encriptar;
+import com.proyecto.servicio.ServicioProtectora;
+import com.proyecto.servicio.ServicioRol;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:8181")
-@RequestMapping("/api/gatos")
-public class GatoWS {
+@RequestMapping("/api/protectoras")
+public class ProtectoraWS {
 	
 	@Autowired
-	ServicioGato sg;
+	ServicioProtectora sp;
 	
 	@Autowired
-	ServicioUsuario su;
+	ServicioRol sr;
 	
-	@GetMapping("")
-	public ResponseEntity<?> findAll() {
-		List<GatoVO> lista = new ArrayList<GatoVO>();
-		sg.findAll().forEach(x -> lista.add(new GatoVO(x.getIdgato(), x.getNombre(), x.getSexo(),
-		x.getEdad(), x.getDescripcion(), x.isAcogido(), x.isAdoptado(), x.getFoto(), x.getUsuario(), x.getProtectora())));
-		return new ResponseEntity<List<GatoVO>>(lista, HttpStatus.OK);
-	}
+	static Encriptar e;
 	
-	@GetMapping("encontrarPorNombre")
-	public ResponseEntity<?> encontrarPorNombre(@RequestParam String nombre) {
-		GatoVO gato = sg.findByNombre(nombre);
-		return new ResponseEntity<GatoVO>(gato, HttpStatus.OK);
+	@GetMapping("/encontrarPorUsuario")
+	public ResponseEntity<?> encontrarPorUsuario(@RequestParam String nombreUsuario) {
+		ProtectoraVO protectora = sp.findByNombreUsuario(nombreUsuario);
+		return new ResponseEntity<ProtectoraVO>(protectora, HttpStatus.OK);
 	}
 	
 	@PostMapping("/insertar")
-	public ResponseEntity<?> insertar(@RequestBody GatoDTO gato) {
+	public ResponseEntity<?> insertar(@RequestBody ProtectoraDTO protectora) {
 		try {
-			sg.save(new GatoVO(gato.getIdgato(), gato.getNombre(), gato.getSexo(), gato.getEdad(), gato.getDescripcion(),
-			gato.isAcogido(), gato.isAdoptado(), gato.getFoto(), su.findByNombreUsuario(gato.getNombreUsuario())));
+			sp.save(new ProtectoraVO(protectora.getIdprotectora(), protectora.getDenominacion(), protectora.getLocalidad(),
+			protectora.getTelefono(), protectora.getEmail(), protectora.getNombreUsuario(),
+			Encriptar.encriptarPassword(protectora.getPassword()), protectora.getFotoPerfil(), sr.findById(protectora.getIdrol()).get()));
 			return new ResponseEntity<String>("Funciona", HttpStatus.CREATED);
 		} catch(DataIntegrityViolationException e) {
 			return new ResponseEntity<String>("Data exception", HttpStatus.BAD_REQUEST);
@@ -64,10 +56,11 @@ public class GatoWS {
 	}
 	
 	@PutMapping("/actualizar")
-	public ResponseEntity<?> actualizar(@RequestBody GatoDTO gato) {
+	public ResponseEntity<?> actualizar(@RequestBody ProtectoraDTO protectora) {
 		try {
-			sg.save(new GatoVO(gato.getIdgato(), gato.getNombre(), gato.getSexo(), gato.getEdad(), gato.getDescripcion(),
-			gato.isAcogido(), gato.isAdoptado(), gato.getFoto(), su.findByNombreUsuario(gato.getNombreUsuario())));
+			sp.save(new ProtectoraVO(protectora.getIdprotectora(), protectora.getDenominacion(), protectora.getLocalidad(),
+			protectora.getTelefono(), protectora.getEmail(), protectora.getNombreUsuario(),
+			Encriptar.encriptarPassword(protectora.getPassword()), protectora.getFotoPerfil(), sr.findById(protectora.getIdrol()).get()));
 			return new ResponseEntity<String>("Funciona", HttpStatus.CREATED);
 		} catch(DataIntegrityViolationException e) {
 			return new ResponseEntity<String>("Data exception", HttpStatus.BAD_REQUEST);
@@ -75,16 +68,6 @@ public class GatoWS {
 			if(e.getCause() instanceof ConstraintViolationException) return new ResponseEntity<String>("Constraint exception",
 			HttpStatus.BAD_REQUEST);
 			return new ResponseEntity<String>("General exception", HttpStatus.BAD_REQUEST);
-		}
-	}
-	
-	@DeleteMapping("/eliminar")
-	public ResponseEntity<?> eliminar(@RequestParam int idgato) {
-		try {
-			sg.deleteById(idgato);
-			return new ResponseEntity<String>("Funciona", HttpStatus.OK);
-		} catch(Exception e) {
-			return new ResponseEntity<String>("Error", HttpStatus.BAD_REQUEST);
 		}
 	}
 

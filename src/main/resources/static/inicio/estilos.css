@@ -1,3 +1,62 @@
+button {
+    width: 50px;
+    height: 30px;
+    margin: 5px auto;
+    padding: 0 10px;
+    border: 2px solid #429EA6;
+    border-radius: 30px;
+    box-shadow: #429EA6 5px 5px 0 0;
+    color: #429EA6;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #ECEBE4;
+}
+
+.menuResponsive {
+	display: none;
+}
+
+.menuDesplegable {
+	display: none;
+	flex-direction: column;
+}
+
+.menuDesplegable ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+    list-style: none;
+    font-weight: bold;
+}
+
+.menuDesplegable ul a {
+	display: flex;
+	flex-direction: column;
+	width: 120px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.1s;
+    color: #CC998D;
+    background: #ECEBE4;
+    font-size: 3vw;
+    text-decoration: none;
+}
+
+.menuDesplegable ul a:hover {
+    color: #ECEBE4;
+    background: #CC998D;
+}
+
 .presentacion {
     display: flex;
     flex-direction: column;
@@ -36,4 +95,16 @@ img {
     height: 350px;
     margin: 0 auto;
     border-radius: 300px;
+}
+
+@media(max-width: 660px) {
+	.menu ul {
+		display: none;
+	}
+	.menuResponsive {
+		display: flex;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 }
