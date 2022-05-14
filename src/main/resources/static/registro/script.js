@@ -11,7 +11,7 @@ window.onload = function () {
 
     botonGuardarUsuario.addEventListener("click", async function guardar() {
 	
-		let inputFoto = document.querySelector(".subidaFotoU");
+		let inputFoto = document.querySelector("#fotoPerfilU");
 		let inputNombre = document.querySelector(".nombreU");
 		let inputApellidos = document.querySelector(".apellidosU");
 		let inputFecha = document.querySelector(".fechaNacimientoU");
@@ -54,7 +54,7 @@ window.onload = function () {
 
     botonGuardarProtectora.addEventListener("click", async function guardar() {
 	
-		let inputFoto = document.querySelector(".subidaFotoP");
+		let inputFoto = document.querySelector("#fotoPerfilP");
 		let inputDenominacion = document.querySelector(".denominacionP");
 		let inputLocalidad = document.querySelector(".localidadP");
 		let inputTelefono = document.querySelector(".telefonoP");
