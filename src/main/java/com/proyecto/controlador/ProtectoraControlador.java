@@ -11,7 +11,7 @@ import com.proyecto.modelo.ProtectoraVO;
 import com.proyecto.servicio.ServicioProtectora;
 
 @Controller
-@RequestMapping("/protectora")
+@RequestMapping("/admin/protectora")
 public class ProtectoraControlador {
 	
 	@Autowired

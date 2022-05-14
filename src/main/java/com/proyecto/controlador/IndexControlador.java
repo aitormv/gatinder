@@ -12,11 +12,6 @@ public class IndexControlador {
 		return "login";
 	}
 	
-	@RequestMapping("/logout")
-	public String logout() {
-		return "logout/index";
-	}
-	
 	@RequestMapping("/registro")
 	public String registro() {
 		return "registro/index";

@@ -1,5 +1,7 @@
 package com.proyecto.ws;
 
+import java.io.File;
+
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.proyecto.dto.ProtectoraDTO;
 import com.proyecto.modelo.ProtectoraVO;
@@ -46,10 +49,10 @@ public class ProtectoraWS {
 			protectora.getTelefono(), protectora.getEmail(), protectora.getNombreUsuario(),
 			Encriptar.encriptarPassword(protectora.getPassword()), protectora.getFotoPerfil(), sr.findById(protectora.getIdrol()).get()));
 			return new ResponseEntity<String>("Funciona", HttpStatus.CREATED);
-		} catch(DataIntegrityViolationException e) {
+		} catch (DataIntegrityViolationException e) {
 			return new ResponseEntity<String>("Data exception", HttpStatus.BAD_REQUEST);
-		} catch(Exception e) {
-			if(e.getCause() instanceof ConstraintViolationException) return new ResponseEntity<String>("Constraint exception",
+		} catch (Exception e) {
+			if (e.getCause() instanceof ConstraintViolationException) return new ResponseEntity<String>("Constraint exception",
 			HttpStatus.BAD_REQUEST);
 			return new ResponseEntity<String>("General exception", HttpStatus.BAD_REQUEST);
 		}
@@ -62,12 +65,23 @@ public class ProtectoraWS {
 			protectora.getTelefono(), protectora.getEmail(), protectora.getNombreUsuario(),
 			Encriptar.encriptarPassword(protectora.getPassword()), protectora.getFotoPerfil(), sr.findById(protectora.getIdrol()).get()));
 			return new ResponseEntity<String>("Funciona", HttpStatus.CREATED);
-		} catch(DataIntegrityViolationException e) {
+		} catch (DataIntegrityViolationException e) {
 			return new ResponseEntity<String>("Data exception", HttpStatus.BAD_REQUEST);
-		} catch(Exception e) {
-			if(e.getCause() instanceof ConstraintViolationException) return new ResponseEntity<String>("Constraint exception",
+		} catch (Exception e) {
+			if (e.getCause() instanceof ConstraintViolationException) return new ResponseEntity<String>("Constraint exception",
 			HttpStatus.BAD_REQUEST);
 			return new ResponseEntity<String>("General exception", HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@PostMapping("/upload") 
+	public ResponseEntity<?> handleFileUpload(@RequestParam("file") MultipartFile file) {
+		String fileName = file.getOriginalFilename();
+		try {
+			file.transferTo(new File("\\C:\\upload\\" + fileName));
+			return ResponseEntity.ok("File uploaded successfully");
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		}
 	}
 

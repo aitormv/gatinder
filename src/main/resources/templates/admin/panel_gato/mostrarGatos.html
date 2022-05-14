@@ -1,34 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="www.thymeleaf.org">
+
 <head>
-	<meta charset="ISO-8859-1">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="../estilos.css">
+    <link rel="stylesheet" type="text/css" href="../admin/estilos.css">
 	<title>Tabla de gatos</title>
 </head>
-<style>
-	body {
-		background-color: #429EA6;
-		text-align: center;
-	}
-	table {
-		width: 100%;
-	}
-	tr, th, td {
-		border-style: solid;
-		border-width: 1px;
-		font-size: 20px;
-		text-align: center;
-		color: #ECEBE4;
-		background-color: #CC998D;
-	}
-	a {
-		color: #ECEBE4;
-		text-decoration: none;
-	}
-	p {
-		font-size: 20px;
-	}
-</style>
+
 <body>
+	<h1>GATOS</h1>
 	<table>
 		<tr><th>NOMBRE GATO</th><th>ELIMINAR</th><th>MODIFICAR</th></tr>
 		<tr th:each="gato : ${gatos}">
@@ -38,7 +21,8 @@
 		</tr>
 	</table>
 	<br>
-	<p><a href="/gato/formInsertar">INSERTAR</a></p>
-	<p><a href="/admin">ATRAS</a></p>
+	<h3><a href="/admin/gato/formInsertar">INSERTAR</a></h3>
+	<h3><a href="/admin">ATRÁS</a></h3>
 </body>
+
 </html>

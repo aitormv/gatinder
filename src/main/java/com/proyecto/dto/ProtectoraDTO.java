@@ -30,12 +30,5 @@ public class ProtectoraDTO {
 		this.password = password;
 		this.fotoPerfil = fotoPerfil;
 	}
-	
-	@Override
-	public String toString() {
-		return "ProtectoraDTO [idprotectora=" + idprotectora + ", denominacion=" + denominacion + ", localidad="
-				+ localidad + ", telefono=" + telefono + ", email=" + email + ", nombreUsuario=" + nombreUsuario
-				+ ", password=" + password + ", fotoPerfil=" + fotoPerfil + ", idrol=" + idrol + "]";
-	}
 
 }

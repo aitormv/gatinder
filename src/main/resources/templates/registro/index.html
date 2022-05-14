@@ -5,58 +5,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="estilos.css">
     <link rel="stylesheet" type="text/css" href="registro/estilos.css">
+    <script src="https://app.simplefileupload.com/buckets/d6450a57a3a7fd1d507a6cc80e1b0850.js"></script> 
     <script src="registro/script.js"></script>
     <title>Página de registro</title>
+    <link href="img/favicon.ico" rel="icon" type="image/x-icon">
 </head>
 
 <body>
     <div class="menu">
         <ul>
-            <li><a href="/">VOLVER ATRÁS</a></li>
+            <li><a href="/"><i class="fas fa-house fa-lg"></i> VOLVER ATRÁS</a></li>
         </ul>
     </div>
     <h1>REGISTRO</h1>
     <div class="columnasRegistro">
         <div class="registroUsuario">
             <h2>SOY UN ADOPTANTE</h2>
-            <form action="#" method="post" name="form_usuario" class="ficha1">
-                <p>Nombre: <label for="nombre"><input type="text" size="20" pattern="[a-zA-Z'-'\s]*" title="Solo caracteres alfabéticos" name="nombre" required></label></p>
-                <p>Apellidos: <label for="apellidos"><input type="text" size="20" pattern="[a-zA-Z'-'\s]*" title="Solo caracteres alfabéticos" name="apellidos" required></label></p>
-                <p>Sexo:
-                	<input type="radio" name="sexo" value="hombre" id="pregunta_hombre"/>
-                	<label for="pregunta_hombre">Hombre</label>
-                	<input type="radio" name="sexo" value="mujer" id="pregunta_mujer"/>
-                	<label for="pregunta_mujer">Mujer</label>
-                </p>
-                <p>Fecha de nacimiento: <label for="fechaNacimiento"><input type="date" name="fechaNacimiento" required></label></p>
-                <p>Localidad: <label for="localidad"><input type="text" size="20" name="localidad" required></label></p>
-                <p>Teléfono: <label for="telefono"><input type="tel" size="10" pattern="[0-9]{9}" title="Formato de nueve números" name="telefono" required></label></p>
-                <p>Correo electrónico: <label for="email"><input type="email" size="20" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Ejemplo: gatinder@ejemplo.es" name="email" required></label></p>
-                <p>Nombre de usuario: <label for="nombreUsuario"><input type="text" size="20" name="nombreUsuario" required></label></p>
-                <p>Contraseña: <label for="password"><input type="password" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Mínimo ocho caracteres, tiene que tener mayúsculas y minúsculas, así como un número" name="password" required></label></p>
-                <p>Foto de perfil: <label for="subidaFoto"><input type="file" name="subidaFoto" class="subidaFoto" accept=".jpg" required></label><button class="subirFotoU">SUBIR FOTO</button></p>
-                <label for="fotoPerfil"><input type="hidden" name="fotoPerfil" class="fotoPerfil"></label>
-                <img src="/img/blank.jpg" alt="" class="visualizarFotoU"><br><br>
-                <label for="idrol"><input type="hidden" value="1" name="idrol"></label>
-                <input type="submit" class="botonGuardarUsuario" value="REGISTRARSE">
-                <p class="mensajeConfirmacion1"></p>
+            <form class="ficha1">
+                <img src="/img/blank.jpg" alt="" class="visualizarFotoU"><br>
+                <label><i class="fas fa-camera"></i> Foto de perfil</label><br>
+                <input type="file" class="subidaFotoU" accept=".jpg" required><br><br>
+                <input type="hidden" name="fotoPerfil" id="fotoPerfilU" class="simple-file-upload">
+                <label><i class="fas fa-file-signature"></i> Nombre</label><br>
+                <input type="text" size="20" name="nombre" class="nombreU" required><br><br>
+                <label><i class="fas fa-file-signature"></i> Apellidos</label><br>
+                <input type="text" size="20" name="apellidos" class="apellidosU" required><br><br>
+                <label><i class="fas fa-user-group"></i> Sexo</label><br>
+                	<input type="radio" value="Hombre" name="sexo">
+                	<label>Hombre</label>
+                	<input type="radio" value="Mujer" name="sexo">
+                	<label>Mujer</label>
+                	<input type="radio" value="Otro" name="sexo">
+                	<label>Otro</label><br><br>
+                <label><i class="fas fa-calendar"></i> Fecha de nacimiento</label><br>
+                <input type="date" name="fechaNacimiento" class="fechaNacimientoU" required><br><br>
+                <label><i class="fas fa-location-dot"></i> Localidad</label><br>
+                <input type="text" size="20" name="localidad" class="localidadU" required><br><br>
+                <label><i class="fas fa-phone"></i> Teléfono</label><br>
+                <input type="tel" size="10" pattern="[0-9]{9}" title="Formato de nueve números" name="telefono" class="telefonoU" required><br><br>
+                <label><i class="fas fa-at"></i> Correo electrónico</label><br>
+                <input type="email" size="20" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Ejemplo: gatinder@ejemplo.es" name="email" class="emailU" required><br><br>
+                <label><i class="fas fa-address-card"></i> Nombre de usuario</label><br>
+                <input type="text" size="20" name="nombreUsuario" class="nombreUsuarioU" required><br><br>
+                <label><i class="fas fa-key"></i> Contraseña</label><br>
+                <input type="password" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Mínimo ocho caracteres, tiene que tener mayúsculas y minúsculas, así como un número" name="password" class="passwordU" required><br><br>
+                <input type="hidden" value="1" name="idrol">
+                <input type="submit" class="botonGuardarUsuario" value="REGISTRARSE"><br><br>
+                <label class="mensajeU"></label>
             </form>
         </div>
         <div class="registroProtectora">
             <h2>SOY UNA PROTECTORA</h2>
-            <form action="#" method="post" name="form_protectora" class="ficha2">
-                <p>Denominación: <label for="denominacion"><input type="text" size="20" name="denominacion" required></label></p>
-                <p>Localidad: <label for="localidad"><input type="text" size="20" name="localidad" required></label></p>
-                <p>Teléfono: <label for="telefono"><input type="tel" size="10" pattern="[0-9]{9}" title="Formato de nueve números" name="telefono" required></label></p>
-                <p>Correo electrónico: <label for="email"><input type="email" size="20" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Ejemplo: gatinder@ejemplo.es" name="email" required></label></p>
-                <p>Nombre de usuario: <label for="nombreUsuario"><input type="text" size="20" name="nombreUsuario" required></label></p>
-                <p>Contraseña: <label for="password"><input type="password" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Mínimo ocho caracteres, tiene que tener mayúsculas y minúsculas, así como un número" name="password" required></label></p>
-                <p>Foto de perfil: <label for="fotoPerfil"><input type="text" name="fotoPerfil" required><button class="subirFotoP">SUBIR FOTO</button></label></p>
-                <label for="idrol"><input type="hidden" value="2" name="idrol"></label>
-                <input type="submit" class="botonGuardarProtectora" value="REGISTRARSE">
-                <p class="mensajeConfirmacion2"></p>
+            <form class="ficha2">
+                <img src="/img/blank.jpg" alt="" class="visualizarFotoP"><br>
+                <label><i class="fas fa-camera"></i> Foto de perfil</label><br>
+                <input type="file" name="subidaFotoP" class="subidaFotoP" accept=".jpg" required><button class="subirFotoP">SUBIR FOTO</button><br><br>
+                <input type="hidden" name="fotoPerfil" id="fotoPerfilP" class="simple-file-upload">
+                <label><i class="fas fa-file-signature"></i> Denominación</label><br>
+                <input type="text" size="20" name="denominacion" class="denominacionP" required><br><br>
+                <label><i class="fas fa-location-dot"></i> Localidad</label><br>
+                <input type="text" size="20" name="localidad" class="localidadP" required><br><br>
+                <label><i class="fas fa-phone"></i> Teléfono</label><br>
+                <input type="tel" size="10" pattern="[[0-9]{9}" title="Formato de nueve números" name="telefono" class="telefonoP" required><br><br>
+                <label><i class="fas fa-at"></i> Correo electrónico</label><br>
+                <input type="email" size="20" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Ejemplo: gatinder@ejemplo.es" name="email" class="emailP" required><br><br>
+                <label><i class="fas fa-address-card"></i> Nombre de usuario</label><br>
+                <input type="text" size="20" name="nombreUsuario" class="nombreUsuarioP" required><br><br>
+                <label><i class="fas fa-key"></i> Contraseña</label><br>
+                <input type="password" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Mínimo ocho caracteres, tiene que tener mayúsculas y minúsculas, así como un número" name="password" class="passwordP" required><br><br>
+                <input type="hidden" value="11" name="idrol"><!--value="2"-->
+                <input type="submit" class="botonGuardarProtectora" value="REGISTRARSE"><br><br>
+                <label class="mensajeP"></label>
             </form>
         </div>
     </div>

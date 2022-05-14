@@ -1,5 +1,6 @@
 package com.proyecto.ws;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,10 +18,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.proyecto.dto.GatoDTO;
 import com.proyecto.modelo.GatoVO;
 import com.proyecto.servicio.ServicioGato;
+import com.proyecto.servicio.ServicioProtectora;
 import com.proyecto.servicio.ServicioUsuario;
 
 @RestController
@@ -33,6 +36,9 @@ public class GatoWS {
 	
 	@Autowired
 	ServicioUsuario su;
+	
+	@Autowired
+	ServicioProtectora sp;
 	
 	@GetMapping("")
 	public ResponseEntity<?> findAll() {
@@ -52,12 +58,12 @@ public class GatoWS {
 	public ResponseEntity<?> insertar(@RequestBody GatoDTO gato) {
 		try {
 			sg.save(new GatoVO(gato.getIdgato(), gato.getNombre(), gato.getSexo(), gato.getEdad(), gato.getDescripcion(),
-			gato.isAcogido(), gato.isAdoptado(), gato.getFoto(), su.findByNombreUsuario(gato.getNombreUsuario())));
+			gato.isAcogido(), gato.isAdoptado(), gato.getFoto(), su.findByNombreUsuario(gato.getNombreUsuario()), sp.findById(gato.getIdprotectora()).get()));
 			return new ResponseEntity<String>("Funciona", HttpStatus.CREATED);
-		} catch(DataIntegrityViolationException e) {
+		} catch (DataIntegrityViolationException e) {
 			return new ResponseEntity<String>("Data exception", HttpStatus.BAD_REQUEST);
-		} catch(Exception e) {
-			if(e.getCause() instanceof ConstraintViolationException) return new ResponseEntity<String>("Constraint exception",
+		} catch (Exception e) {
+			if (e.getCause() instanceof ConstraintViolationException) return new ResponseEntity<String>("Constraint exception",
 			HttpStatus.BAD_REQUEST);
 			return new ResponseEntity<String>("General exception", HttpStatus.BAD_REQUEST);
 		}
@@ -69,10 +75,10 @@ public class GatoWS {
 			sg.save(new GatoVO(gato.getIdgato(), gato.getNombre(), gato.getSexo(), gato.getEdad(), gato.getDescripcion(),
 			gato.isAcogido(), gato.isAdoptado(), gato.getFoto(), su.findByNombreUsuario(gato.getNombreUsuario())));
 			return new ResponseEntity<String>("Funciona", HttpStatus.CREATED);
-		} catch(DataIntegrityViolationException e) {
+		} catch (DataIntegrityViolationException e) {
 			return new ResponseEntity<String>("Data exception", HttpStatus.BAD_REQUEST);
-		} catch(Exception e) {
-			if(e.getCause() instanceof ConstraintViolationException) return new ResponseEntity<String>("Constraint exception",
+		} catch (Exception e) {
+			if (e.getCause() instanceof ConstraintViolationException) return new ResponseEntity<String>("Constraint exception",
 			HttpStatus.BAD_REQUEST);
 			return new ResponseEntity<String>("General exception", HttpStatus.BAD_REQUEST);
 		}
@@ -83,8 +89,19 @@ public class GatoWS {
 		try {
 			sg.deleteById(idgato);
 			return new ResponseEntity<String>("Funciona", HttpStatus.OK);
-		} catch(Exception e) {
+		} catch (Exception e) {
 			return new ResponseEntity<String>("Error", HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@PostMapping("/upload") 
+	public ResponseEntity<?> handleFileUpload(@RequestParam("file") MultipartFile file) {
+		String fileName = file.getOriginalFilename();
+		try {
+			file.transferTo(new File("\\C:\\upload\\" + fileName));
+			return ResponseEntity.ok("File uploaded successfully");
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		}
 	}
 

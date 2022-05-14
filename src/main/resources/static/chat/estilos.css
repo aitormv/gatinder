@@ -2,6 +2,10 @@ body {
 	padding: 10px;
 }
 
+p, small {
+	color: #CC998D;
+}
+
 form {
     margin: 15px 0;
 }

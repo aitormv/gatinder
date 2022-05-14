@@ -15,13 +15,28 @@ button {
     background-color: #ECEBE4;
 }
 
+img {
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+    border-radius: 300px;
+}
+
+.logoSmall {
+	position: absolute;
+	top: 10px;
+    width: 100px;
+    height: 100px;
+}
+
 .menuResponsive {
 	display: none;
 }
 
 .menuDesplegable {
-	display: none;
+	display: flex;
 	flex-direction: column;
+	visibility: hidden;
 }
 
 .menuDesplegable ul {
@@ -62,10 +77,6 @@ button {
     flex-direction: column;
 }
 
-.presentacion h1, h2, h3, p {
-    text-align: center;
-}
-
 .presentacion h1 {
     font-size: 50px;
 }
@@ -80,8 +91,6 @@ button {
 
 .presentacion p {
     font-size: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
 }
 
 .footer {
@@ -90,14 +99,10 @@ button {
     background: #CC998D;
 }
 
-img {
-    width: 350px;
-    height: 350px;
-    margin: 0 auto;
-    border-radius: 300px;
-}
-
 @media(max-width: 660px) {
+	.logoSmall {
+		display: none;
+	}
 	.menu ul {
 		display: none;
 	}

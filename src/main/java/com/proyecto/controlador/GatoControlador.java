@@ -11,7 +11,7 @@ import com.proyecto.modelo.GatoVO;
 import com.proyecto.servicio.ServicioGato;
 
 @Controller
-@RequestMapping("/gato")
+@RequestMapping("/admin/gato")
 public class GatoControlador {
 	
 	@Autowired

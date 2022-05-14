@@ -9,20 +9,19 @@
     <link rel="stylesheet" type="text/css" href="estilos.css">
     <link rel="stylesheet" type="text/css" href="403page/estilos.css">
 	<title>ERROR 403 - ACCESO DENEGADO</title>
+	<link href="img/favicon.ico" rel="icon" type="image/x-icon">
 </head>
 
 <body>
 	<div class="menu">
         <ul>
-            <li><a href="/">VOLVER ATRÁS</a></li>
+            <li><a href="/"><i class="fas fa-house fa-lg"></i> VOLVER ATRÁS</a></li>
         </ul>
     </div>
     <div class="pagError">
     	<h1>ACCESO DENEGADO</h1>
-		<h1>NO TIENES PERMISOS DE USUARIO PARA ENTRAR EN ESTA PÁGINA</h1>
+		<h1>NO TIENES PERMISOS DE USUARIO PARA ENTRAR EN ESTA PAGINA</h1>
 		<img src="img/403.jpg">
-		<h3 th:if="${message}!=null" th:text="${message}"></h3>
-		<div th:if="${userInfo}!=null" th:text="${userInfo}"></div>
     </div>
 </body>
 

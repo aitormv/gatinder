@@ -1,6 +1,10 @@
 package com.proyecto.ws;
 
-import java.io.File;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,10 +53,10 @@ public class UsuarioWS {
 			usuario.getFechaNacimiento(), usuario.getLocalidad(), usuario.getTelefono(), usuario.getEmail(), usuario.getNombreUsuario(),
 			Encriptar.encriptarPassword(usuario.getPassword()), usuario.getFotoPerfil(), sr.findById(usuario.getIdrol()).get()));
 			return new ResponseEntity<String>("Funciona", HttpStatus.CREATED);
-		} catch(DataIntegrityViolationException e) {
+		} catch (DataIntegrityViolationException e) {
 			return new ResponseEntity<String>("Data exception", HttpStatus.BAD_REQUEST);
-		} catch(Exception e) {
-			if(e.getCause() instanceof ConstraintViolationException) return new ResponseEntity<String>("Constraint exception",
+		} catch (Exception e) {
+			if (e.getCause() instanceof ConstraintViolationException) return new ResponseEntity<String>("Constraint exception",
 			HttpStatus.BAD_REQUEST);
 			return new ResponseEntity<String>("General exception", HttpStatus.BAD_REQUEST);
 		}
@@ -65,10 +69,10 @@ public class UsuarioWS {
 			usuario.getFechaNacimiento(), usuario.getLocalidad(), usuario.getTelefono(), usuario.getEmail(), usuario.getNombreUsuario(),
 			Encriptar.encriptarPassword(usuario.getPassword()), usuario.getFotoPerfil(), sr.findById(usuario.getIdrol()).get()));
 			return new ResponseEntity<String>("Funciona", HttpStatus.CREATED);
-		} catch(DataIntegrityViolationException e) {
+		} catch (DataIntegrityViolationException e) {
 			return new ResponseEntity<String>("Data exception", HttpStatus.BAD_REQUEST);
-		} catch(Exception e) {
-			if(e.getCause() instanceof ConstraintViolationException) return new ResponseEntity<String>("Constraint exception",
+		} catch (Exception e) {
+			if (e.getCause() instanceof ConstraintViolationException) return new ResponseEntity<String>("Constraint exception",
 			HttpStatus.BAD_REQUEST);
 			return new ResponseEntity<String>("General exception", HttpStatus.BAD_REQUEST);
 		}
@@ -76,13 +80,20 @@ public class UsuarioWS {
 	
 	@PostMapping("/upload") 
 	public ResponseEntity<?> handleFileUpload(@RequestParam("file") MultipartFile file) {
-		String fileName = file.getOriginalFilename();
 		try {
-			file.transferTo(new File("\\C:\\upload\\" + fileName));
+			String fileName = file.getOriginalFilename();
+			InputStream inputStream = file.getInputStream();	  
+			String uploadDir = "static/img/";
+			Path uploadPath = Paths.get(uploadDir);
+	        if (!Files.exists(uploadPath)) {
+	            Files.createDirectories(uploadPath);
+	        }
+		    Path filePath = uploadPath.resolve(fileName);
+		    Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
 			return ResponseEntity.ok("File uploaded successfully");
-		} catch(Exception e) {
+		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-		}
+        }
 	}
 
 }

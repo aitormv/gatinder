@@ -11,7 +11,7 @@ import com.proyecto.modelo.UsuarioVO;
 import com.proyecto.servicio.ServicioUsuario;
 
 @Controller
-@RequestMapping("/usuario")
+@RequestMapping("/admin/usuario")
 public class UsuarioControlador {
 	
 	@Autowired

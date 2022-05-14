@@ -18,13 +18,6 @@ public class GatoDTO {
 	private boolean adoptado;
 	private String foto;
 	private String nombreUsuario;
-	private String nombreProtectora;
-	
-	@Override
-	public String toString() {
-		return "GatoDTO [idgato=" + idgato + ", nombre=" + nombre + ", sexo=" + sexo + ", edad=" + edad
-				+ ", descripcion=" + descripcion + ", acogido=" + acogido + ", adoptado=" + adoptado + ", foto=" + foto
-				+ ", nombreUsuario=" + nombreUsuario + ", nombreProtectora=" + nombreProtectora + "]";
-	}
+	private int idprotectora;
 	
 }

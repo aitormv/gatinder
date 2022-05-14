@@ -23,13 +23,5 @@ public class UsuarioDTO {
 	private String password;
 	private String fotoPerfil;
 	private int idrol;
-	
-	@Override
-	public String toString() {
-		return "UsuarioDTO [idusuario=" + idusuario + ", nombre=" + nombre + ", apellidos=" + apellidos + ", sexo="
-				+ sexo + ", fechaNacimiento=" + fechaNacimiento + ", localidad=" + localidad + ", telefono=" + telefono
-				+ ", email=" + email + ", nombreUsuario=" + nombreUsuario + ", password=" + password + ", fotoPerfil="
-				+ fotoPerfil + ", idrol=" + idrol + "]";
-	}
 
 }
