@@ -25,10 +25,8 @@
         <div class="registroUsuario">
             <h2>SOY UN ADOPTANTE</h2>
             <form class="ficha1">
-                <img src="/img/blank.jpg" alt="" class="visualizarFotoU"><br>
                 <label><i class="fas fa-camera"></i> Foto de perfil</label><br>
-                <input type="file" class="subidaFotoU" accept=".jpg" required><br><br>
-                <input type="hidden" name="fotoPerfil" id="fotoPerfilU" class="simple-file-upload">
+                <input type="hidden" name="fotoPerfil" id="fotoPerfilU" class="simple-file-upload" accept=".jpg, .png" required><br><br>
                 <label><i class="fas fa-file-signature"></i> Nombre</label><br>
                 <input type="text" size="20" name="nombre" class="nombreU" required><br><br>
                 <label><i class="fas fa-file-signature"></i> Apellidos</label><br>
@@ -60,10 +58,8 @@
         <div class="registroProtectora">
             <h2>SOY UNA PROTECTORA</h2>
             <form class="ficha2">
-                <img src="/img/blank.jpg" alt="" class="visualizarFotoP"><br>
                 <label><i class="fas fa-camera"></i> Foto de perfil</label><br>
-                <input type="file" name="subidaFotoP" class="subidaFotoP" accept=".jpg" required><button class="subirFotoP">SUBIR FOTO</button><br><br>
-                <input type="hidden" name="fotoPerfil" id="fotoPerfilP" class="simple-file-upload">
+                <input type="hidden" name="fotoPerfil" id="fotoPerfilP" class="simple-file-upload" accept=".jpg, .png" required><br><br>
                 <label><i class="fas fa-file-signature"></i> Denominación</label><br>
                 <input type="text" size="20" name="denominacion" class="denominacionP" required><br><br>
                 <label><i class="fas fa-location-dot"></i> Localidad</label><br>

@@ -4,36 +4,6 @@ window.onload = function () {
 	
 	const ficha1 = document.querySelector(".ficha1");
 	const ficha2 = document.querySelector(".ficha2");
-	const subidaFotoU = document.querySelector(".subidaFotoU");
-	const fotoPerfilU = document.querySelector("#fotoPerfilU");
-	const visualizarFotoU = document.querySelector(".visualizarFotoU");
-	const subidaFotoP = document.querySelector(".subidaFotoP");
-	const fotoPerfilP = document.querySelector(".fotoPerfilP");
-	const visualizarFotoP = document.querySelector(".visualizarFotoP");
-	
-	let subirFotoU = document.querySelector(".subirFotoU");
-	
-	// FUNCIÓN QUE SUBE AL SERVIDOR LA FOTO DEL USUARIO
-	
-	subirFotoU.addEventListener("click", async function subirFotoUsuario() {
-		
-		/*let respuesta;
-		
-		let dataForm = new FormData();
-		dataForm.append("file", subidaFotoU.files[0]);*/
-		
-		fotoPerfilU.value = subidaFotoU.value;
-
-  		/*respuesta = await fetch('/api/usuarios/upload', {
-			headers: {'Access-Control-Allow-Origin':'*'},
-    		method: 'POST', 
-    		body: dataForm
-  		});*/
-
-		visualizarFotoU.src = fotoPerfilU.value;
-		//await respuesta.json();
-
-  	});
 
 	// FUNCIÓN QUE VALIDA LOS DATOS E INSERTA EL NUEVO USUARIO
 
@@ -77,30 +47,6 @@ window.onload = function () {
 		await respuesta.json();
 		
     });
-
-	let subirFotoP = document.querySelector(".subirFotoP");
-	
-	// FUNCIÓN QUE SUBE AL SERVIDOR LA FOTO DE LA PROTECTORA
-	
-	subirFotoP.addEventListener("click", async function subirFotoProtectora() {
-		
-		let respuesta;
-		
-		let dataForm = new FormData();
-		dataForm.append("file", subidaFotoP.files[0]);
-		
-		fotoPerfilP.value = "/img/" + subidaFotoP.value.slice(12);
-
-  		respuesta = await fetch('/api/protectoras/upload', {
-			headers: {'Access-Control-Allow-Origin':'*'},
-    		method: 'POST', 
-    		body: dataForm
-  		});
-
-		visualizarFotoP.src = fotoPerfilP.value;
-		await respuesta.json();
-
-  	});
 
     let botonGuardarProtectora = document.querySelector(".botonGuardarProtectora");
 
