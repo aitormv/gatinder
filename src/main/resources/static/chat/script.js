@@ -28,7 +28,7 @@ window.onload = function () {
 			nombreDestinatario.innerHTML = 'Estás hablando con ' + destinatario;
 		}
 		
-		if (rol == 2 || rol == 11) {
+		if (rol == 11) {
 			let respuestaP = await fetch(`/api/protectoras/encontrarPorUsuario?nombreUsuario=${nombreUsuario}`);
 			let protectora = await respuestaP.json();
 			username.innerHTML = 'Bienvenido, ' + protectora.nombreUsuario;
@@ -53,7 +53,7 @@ window.onload = function () {
 		    	var mensaje = JSON.parse(mensajeRecibido.body);
 				if (mensaje.enviadoPor == nombreUsuario) return;
 				if (rol == 1 && mensaje.enviadoA == nombreUsuario) mostrarMensajesRecibidos(mensaje);
-				if (rol == 2 || rol == 11 && mensaje.enviadoA == nombreUsuario) return;
+				if (rol == 11 && mensaje.enviadoA == nombreUsuario) return;
 				mostrarMensajesRecibidos(mensaje);
 			});
 			
@@ -159,7 +159,7 @@ window.onload = function () {
 		historial.append(cajaMensajes);
 		historial.scrollTop = historial.scrollHeight;
 		
-		if (rol == 2 || rol == 11) destinatario = document.querySelector(".floatLeft").innerText;
+		if (rol == 11) destinatario = document.querySelector(".floatLeft").innerText;
 		
 	};
 
