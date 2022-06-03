@@ -15,11 +15,16 @@ window.onload = function() {
 	// Y SI TIENE ROL DE ADMINISTRADOR MUESTRA EN EL MENÚ EL PANEL DE CONTROL
 
 	async function fetchAdmin() {
+		if (nombreUsuario == null) return;
 		let respuesta = await fetch(`/api/usuarios/encontrarPorUsuario?nombreUsuario=${nombreUsuario}`);
 		let usuario = await respuesta.json();
 		if (usuario.rol.idrol == 21) {
 			panelControl.style.display = "flex";
 			panelControlDesplegable.style.display = "flex";
+		}
+		else {
+			panelControl.style.display = "none";
+			panelControlDesplegable.style.display = "none";
 		}
 	};
 
