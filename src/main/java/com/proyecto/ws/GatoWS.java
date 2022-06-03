@@ -1,6 +1,5 @@
 package com.proyecto.ws;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.proyecto.dto.GatoDTO;
 import com.proyecto.modelo.GatoVO;
@@ -91,17 +89,6 @@ public class GatoWS {
 			return new ResponseEntity<String>("Funciona", HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<String>("Error", HttpStatus.BAD_REQUEST);
-		}
-	}
-	
-	@PostMapping("/upload") 
-	public ResponseEntity<?> handleFileUpload(@RequestParam("file") MultipartFile file) {
-		String fileName = file.getOriginalFilename();
-		try {
-			file.transferTo(new File("\\C:\\upload\\" + fileName));
-			return ResponseEntity.ok("File uploaded successfully");
-		} catch (Exception e) {
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		}
 	}
 

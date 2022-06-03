@@ -70,15 +70,15 @@ window.onload = function () {
 		        <div class="tarjetaMensaje">
 		            <div class="cuerpoTarjeta">
 		                <div class="p1">
-		                    <small class="floatLeft">
+		                    <small class="floatRight">
 		                    	${mensaje.enviadoPor}
 		                    </small>
-		                    <small class="floatRight">
+		                    <small class="floatLeft">
 		                        ${mensaje.enviadoEn}
 		                    </small>
 		                </div>
 		                <hr class="texto">
-		                <p class="card-text">
+		                <p class="card-text-recieved">
 		                    ${mensaje.mensaje}
 		                </p>
 		            </div>
@@ -136,7 +136,7 @@ window.onload = function () {
 		                    </small>
 		                </div>
 		                <hr class="texto">
-		                <p class="card-text">
+		                <p class="card-text-sent">
 		                    ${mensaje}
 		                </p>
 		            </div>

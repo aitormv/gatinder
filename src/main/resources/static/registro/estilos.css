@@ -12,22 +12,9 @@ p {
 .registroProtectora, .registroUsuario {
     display: flex-item;
     padding: 10px;
+    margin: 10px;
     border-style: solid;
     border-color: #CC998D;
     border-radius: 15px;
     border-width: 2.5px;
-}
-
-.visualizarFotoU, .visualizarFotoP {
-	width: 150px;
-	height: 150px;
-	border-radius: 100px;
-}
-
-.submit-disabled {
-    border: none;
-    outline: none;
-    pointer-events: none;
-    color: #429EA6;
-    background-color: #ECEBE4;
 }

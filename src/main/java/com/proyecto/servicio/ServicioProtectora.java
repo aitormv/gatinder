@@ -32,4 +32,6 @@ public interface ServicioProtectora {
 
 	ProtectoraVO findByNombreUsuario(String nombreUsuario);
 
+	ProtectoraVO findByDenominacion(String denominacion);
+
 }

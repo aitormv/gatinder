@@ -4,6 +4,22 @@ window.onload = function () {
 	
 	const ficha1 = document.querySelector(".ficha1");
 	const ficha2 = document.querySelector(".ficha2");
+	
+	// FUNCIONES QUE MUESTRAN UN MENSAJE DE REGISTRO CORRECTO, LIMPIAN EL FORMULARIO Y ABREN EL LOGIN
+	
+	document.forms[0].addEventListener("submit", function abrirVentana1(e) {
+		e.preventDefault();
+		document.querySelector(".mensajeU").innerHTML = 'Registro exitoso';
+		ficha1.reset();
+		window.open("/login");
+	});
+	
+	document.forms[1].addEventListener("submit", function abrirVentana2(e) {
+		e.preventDefault();
+		document.querySelector(".mensajeP").innerHTML = 'Registro exitoso';
+		ficha2.reset();
+		window.open("/login");
+	});
 
 	// FUNCIÓN QUE VALIDA LOS DATOS E INSERTA EL NUEVO USUARIO
 
@@ -41,9 +57,6 @@ window.onload = function () {
             body: JSON.stringify(formJSON)
         });
 
-		document.querySelector(".mensajeU").innerHTML = 'Registro exitoso';
-		ficha1.reset();
-        window.open("/login");
 		await respuesta.json();
 		
     });
@@ -80,10 +93,7 @@ window.onload = function () {
             method: 'POST',
             body: JSON.stringify(formJSON)
         });
-
-		document.querySelector(".mensajeP").innerHTML = 'Registro exitoso';
-		ficha2.reset();
-		window.open("/login");
+		
 		await respuesta.json();
     
     });

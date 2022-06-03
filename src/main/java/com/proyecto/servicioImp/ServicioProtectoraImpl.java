@@ -13,6 +13,10 @@ public class ServicioProtectoraImpl implements ServicioProtectora {
 	@Autowired
 	private ProtectoraRepositorio pr;
 	
+	public ProtectoraVO findByDenominacion(String denominacion) {
+		return pr.findByDenominacion(denominacion);
+	}
+
 	@Override
 	public ProtectoraVO findByNombreUsuario(String nombreUsuario) {
 		return pr.findByNombreUsuario(nombreUsuario);

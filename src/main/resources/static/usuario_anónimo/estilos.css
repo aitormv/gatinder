@@ -1,72 +1,84 @@
 button {
-    width: 150px;
-    height: 30px;
-    margin: 5px auto;
-    padding: 0 10px;
-    border: 2px solid #429EA6;
-    border-radius: 30px;
-    box-shadow: #429EA6 5px 5px 0 0;
-    color: #429EA6;
-    font-weight: 600;
-    font-size: 15px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    background-color: #ECEBE4;
+	width: 150px;
+	height: 30px;
+	margin: 5px auto;
+	padding: 0 10px;
+	border: 2px solid #429EA6;
+	border-radius: 30px;
+	box-shadow: #429EA6 5px 5px 0 0;
+	color: #429EA6;
+	font-weight: 600;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	background-color: #ECEBE4;
 }
 
 img {
 	display: flex;
-    width: 150px;
-    height: 150px;
-    border-radius: 75px;
-    margin: 0 auto;
+	width: 150px;
+	height: 150px;
+	border-radius: 75px;
+	margin: 0 auto;
+}
+
+p, span {
+	text-shadow: 0.05em 0 black, 0 0.05em black, -0.05em 0 black, 0 -0.05em
+		black, -0.05em -0.05em black, -0.05em 0.05em black, 0.05em -0.05em
+		black, 0.05em 0.05em black;
 }
 
 .contenedor-principal {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-    overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	overflow: hidden;
 }
 
 .contenedor-mostrar {
 	position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    right: 0.1px;
-    transition: right 0.3s 0.1s ease-out;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	right: 0.1px;
+	transition: right 0.3s 0.1s ease-out;
 }
 
 .fichaGato {
-    display: flex-item;
-    flex-direction: row;
-    width: 1320px;
-    height: 550px;
-    border-radius: 25px;
-    padding: 15px;
-    margin: 15px;
-    text-align: center;
-    background-color: #CC998D;
+	display: flex-item;
+	flex-direction: row;
+	width: 800px;
+	height: 550px;
+	border: solid #CC998D 3px;
+	border-radius: 40px;
+	padding: 15px;
+	padding-top: 240px;
+	margin: 40px 270px 40px 270px;
+	text-align: center;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-clip: padding-box;
+	margin: 40px 270px 40px 270px;
 }
 
 .prev, .next {
 	position: absolute;
-  	top: 400px;
-  	width: auto;
-  	margin-top: -20px;
-  	padding: 15px;
-  	border-radius: 0 3px 3px 0;
-  	color: #ECEBE4;
-  	font-weight: bold;
-  	font-size: 20px;
-  	cursor: pointer;
-  	transition: 0.5s ease;
-  	user-select: none;
+	top: 425px;
+	width: auto;
+	margin-top: -20px;
+	padding: 15px;
+	border-radius: 0 3px 3px 0;
+	color: #ECEBE4;
+	font-weight: bold;
+	font-size: 20px;
+	cursor: pointer;
+	transition: 0.5s ease;
+	user-select: none;
 }
 
 .prev {
@@ -74,21 +86,21 @@ img {
 }
 
 .next {
-  	right: 0;
+	right: 0;
 }
 
 .prev:hover, .next:hover {
-  	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
-@media(max-width: 1060px) {
+@media ( max-width : 1060px) {
 	.contenedor-principal {
-	    display: flex;
-	    flex-direction: row;
-	    flex-wrap: wrap;
-	    align-items: flex-start;
-	    justify-content: space-between;
-	    overflow: visible;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		justify-content: space-between;
+		overflow: visible;
 	}
 	.fichaGato {
 		width: 100%;

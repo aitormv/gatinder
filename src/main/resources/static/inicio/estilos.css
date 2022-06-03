@@ -1,32 +1,39 @@
 button {
-    width: 50px;
-    height: 30px;
-    margin: 5px auto;
-    padding: 0 10px;
-    border: 2px solid #429EA6;
-    border-radius: 30px;
-    box-shadow: #429EA6 5px 5px 0 0;
-    color: #429EA6;
-    font-weight: 600;
-    font-size: 15px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    background-color: #ECEBE4;
+	width: 50px;
+	height: 30px;
+	margin: 5px auto;
+	padding: 0 10px;
+	border: 2px solid #429EA6;
+	border-radius: 30px;
+	box-shadow: #429EA6 5px 5px 0 0;
+	color: #429EA6;
+	font-weight: 600;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	background-color: #ECEBE4;
+}
+
+h2 {
+	padding-top: 37.5px;
+	border-top: solid 3.5px #ECEBE4;
 }
 
 img {
-    width: 350px;
-    height: 350px;
-    margin: 0 auto;
-    border-radius: 300px;
+	width: 350px;
+	height: 350px;
+	margin: 0 auto;
+	border-radius: 300px;
 }
 
-.logoSmall {
-	position: absolute;
-	top: 10px;
-    width: 100px;
-    height: 100px;
+.botonMenu {
+	color: #CC998D;
+}
+
+.botonMenu:hover {
+	color: #ECEBE4;
+	background: #CC998D;
 }
 
 .menuResponsive {
@@ -36,73 +43,81 @@ img {
 .menuDesplegable {
 	display: flex;
 	flex-direction: column;
-	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s;
 }
 
 .menuDesplegable ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 30px;
-    left: 0;
-    margin: auto;
-    padding: 5px;
-    text-align: center;
-    list-style: none;
-    font-weight: bold;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	margin: auto;
+	padding: 5px;
+	text-align: center;
+	list-style: none;
+	font-weight: bold;
 }
 
 .menuDesplegable ul a {
 	display: flex;
 	flex-direction: column;
 	width: 120px;
-    padding: 5px;
-    cursor: pointer;
-    transition: all 0.1s;
-    color: #CC998D;
-    background: #ECEBE4;
-    font-size: 3vw;
-    text-decoration: none;
+	padding: 5px;
+	cursor: pointer;
+	transition: all 0.1s;
+	color: #CC998D;
+	background: #ECEBE4;
+	font-size: 3vw;
+	text-decoration: none;
 }
 
 .menuDesplegable ul a:hover {
-    color: #ECEBE4;
-    background: #CC998D;
+	color: #ECEBE4;
+	background: #CC998D;
+}
+
+.panelControl, .panelControlDesplegable {
+	display: none;
+}
+
+.logo {
+	cursor: pointer;
 }
 
 .presentacion {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .presentacion h1 {
-    font-size: 50px;
+	font-size: 50px;
 }
 
 .presentacion h2 {
-    font-size: 40px;
+	font-size: 40px;
 }
 
 .presentacion h3 {
-    font-size: 30px;
+	font-size: 30px;
 }
 
 .presentacion p {
-    font-size: 20px;
+	font-size: 20px;
 }
 
 .footer {
-    height: 150px;
-    color: #ECEBE4;
-    background: #CC998D;
+	height: 150px;
+	padding: 15px;
+	border-radius: 50% 50% 0 0/50px;
+	color: #ECEBE4;
+	background: #CC998D;
 }
 
-@media(max-width: 660px) {
-	.logoSmall {
-		display: none;
-	}
+@media ( max-width : 660px) {
 	.menu ul {
 		display: none;
 	}

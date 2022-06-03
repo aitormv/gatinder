@@ -1,11 +1,5 @@
 package com.proyecto.ws;
 
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -19,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.proyecto.dto.UsuarioDTO;
 import com.proyecto.modelo.UsuarioVO;
@@ -76,24 +69,6 @@ public class UsuarioWS {
 			HttpStatus.BAD_REQUEST);
 			return new ResponseEntity<String>("General exception", HttpStatus.BAD_REQUEST);
 		}
-	}
-	
-	@PostMapping("/upload") 
-	public ResponseEntity<?> handleFileUpload(@RequestParam("file") MultipartFile file) {
-		try {
-			String fileName = file.getOriginalFilename();
-			InputStream inputStream = file.getInputStream();	  
-			String uploadDir = "static/img/";
-			Path uploadPath = Paths.get(uploadDir);
-	        if (!Files.exists(uploadPath)) {
-	            Files.createDirectories(uploadPath);
-	        }
-		    Path filePath = uploadPath.resolve(fileName);
-		    Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
-			return ResponseEntity.ok("File uploaded successfully");
-		} catch (Exception e) {
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        }
 	}
 
 }
