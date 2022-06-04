@@ -122,6 +122,8 @@ window.onload = function() {
 		for (gato of gatos) {
 
 			if (gato.idgato == undefined) return;
+			
+			console.log(denominacionP.innerHTML.slice(12))
 
 			for (protectora in gato.protectora) {
 				if (gato.protectora["denominacion"] != denominacionP.innerHTML.slice(12)) return;
