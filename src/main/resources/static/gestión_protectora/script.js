@@ -118,12 +118,15 @@ window.onload = function() {
 	function fichasGatos(gatos) {
 
 		limpiarFichas();
+		
+		console.log(gatos)
 
 		for (gato of gatos) {
 
 			if (gato.idgato == undefined) return;
 			
 			console.log(denominacionP.innerHTML.slice(12))
+			console.log(gato.protectora["denominacion"])
 
 			for (protectora in gato.protectora) {
 				if (gato.protectora["denominacion"] != denominacionP.innerHTML.slice(12)) return;
