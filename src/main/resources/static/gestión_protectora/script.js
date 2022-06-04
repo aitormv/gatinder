@@ -119,7 +119,7 @@ window.onload = function() {
 
 		limpiarFichas();
 		
-		let seleccion = gatos.filter(gato => gato.protectora["denominacion"] != denominacionP.innerHTML.slice(12));
+		let seleccion = gatos.filter(gato => gato.protectora["denominacion"] == denominacionP.innerHTML.slice(12));
 
 		for (gato of seleccion) {
 
