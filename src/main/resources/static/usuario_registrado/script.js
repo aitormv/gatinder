@@ -45,8 +45,8 @@ window.onload = function() {
 	// FUNCIÓN QUE MUESTRA LOS GATOS QUE EL USUARIO TIENE EN ACOGIDA Y ADOPCIÓN
 
 	function pintarGatosUsuario(usuario) {
-		if (usuario.gatos == null) return;
-		for (g of usuario.gatos) {
+		let seleccion = usuario.gatos.filter(gato => gato != null);
+		for (g of seleccion) {
 			let titulo = document.createElement("h1");
 			titulo.innerHTML = 'Gatos adoptados y en acogida';
 			let nombre = document.createElement("span");
@@ -190,8 +190,6 @@ window.onload = function() {
 		let seleccion = gatos.filter(gato => gato.adoptado == 0);
 
 		for (gato of seleccion) {
-
-			if (gato.idgato == undefined) return;
 
 			let nombre = document.createElement("p");
 			nombre.innerHTML = gato.nombre;

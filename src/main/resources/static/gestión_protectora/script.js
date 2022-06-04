@@ -119,18 +119,9 @@ window.onload = function() {
 
 		limpiarFichas();
 		
-		console.log(gatos)
+		let seleccion = gatos.filter(gato => gato.protectora["denominacion"] != denominacionP.innerHTML.slice(12));
 
-		for (gato of gatos) {
-
-			if (gato.idgato == undefined) return;
-			
-			console.log(denominacionP.innerHTML.slice(12))
-			console.log(gato.protectora["denominacion"])
-
-			for (protectora in gato.protectora) {
-				if (gato.protectora["denominacion"] != denominacionP.innerHTML.slice(12)) return;
-			}
+		for (gato of seleccion) {
 
 			let titulo = document.createElement("h1");
 			titulo.innerHTML = "FICHA DE GATO";
