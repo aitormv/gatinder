@@ -70,10 +70,9 @@
                 <input type="tel" size="10" pattern="[[0-9]{9}" title="Formato de nueve números" name="telefono" class="telefonoP"><br><br>
                 <label><i class="fas fa-at"></i> Correo electrónico</label>
                 <input type="email" size="20" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Ejemplo: gatinder@ejemplo.es" name="email" class="emailP"><br><br>
-                <label><i class="fas fa-address-card"></i> Nombre de usuario</label>
-                <input type="text" size="20" name="nombreUsuario" class="nombreUsuarioP"><br><br>
                 <label><i class="fas fa-key"></i> Contraseña</label>
                 <input type="password" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Mínimo ocho caracteres, tiene que tener mayúsculas y minúsculas, así como un número" name="password" class="passwordP"><br><br>
+                <input type="hidden" name="nombreUsuario" class="nombreUsuarioP">
                 <input type="hidden" value="11" name="idrol">
                 <button class="botonGuardarProtectora">ACTUALIZAR DATOS</button>
                 <button class="botonCerrarP">CERRAR FORMULARIO</button>
