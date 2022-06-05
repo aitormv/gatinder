@@ -187,9 +187,11 @@ window.onload = function() {
 
 		limpiarFichas();
 
-		let seleccion = gatos.filter(gato => gato.adoptado == 0);
+		let seleccion1 = gatos.filter(gato => gato.adoptado == 0);
+		
+		let seleccion2 = seleccion1.filter(gato => gato.usuario[nombreUsuario == nombreUsuario]);
 
-		for (gato of seleccion) {
+		for (gato of seleccion2) {
 
 			let nombre = document.createElement("p");
 			nombre.innerHTML = gato.nombre;
