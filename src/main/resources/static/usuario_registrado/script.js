@@ -189,7 +189,7 @@ window.onload = function() {
 
 		let seleccion1 = gatos.filter(gato => gato.adoptado == 0);
 		
-		let seleccion2 = seleccion1.filter(gato => gato.usuario[nombreUsuario == nombreUsuario]);
+		let seleccion2 = seleccion1.filter(gato => gato.usuario["nombreUsuario"] == nombreUsuario);
 
 		for (gato of seleccion2) {
 
