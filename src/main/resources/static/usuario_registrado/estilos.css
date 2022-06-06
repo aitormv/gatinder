@@ -122,7 +122,8 @@ img {
 	padding: 0;
 	margin: 15px;
 	text-align: center;
-	background-color: #CC998D;
+	font-size: 10px;
+	background-color: #CC998D, 0.5;
 }
 
 .contenedor-buscar {
