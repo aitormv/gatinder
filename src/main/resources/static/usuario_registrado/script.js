@@ -252,13 +252,13 @@ window.onload = function() {
 				let respuesta = await fetch(`/api/protectoras/encontrarPorDenominacion?denominacion=${denominacion}`);
 				let protectora = await respuesta.json();
 				let denP = document.createElement("p");
-				denP.innerHTML = '<b>Denominación:</b> ' + protectora.denominacion;
+				denP.innerHTML = protectora.denominacion;
 				let locP = document.createElement("p");
-				locP.innerHTML = '<b>Localidad:</b> ' + protectora.localidad;
+				locP.innerHTML = protectora.localidad;
 				let telP = document.createElement("p");
-				telP.innerHTML = '<b>Teléfono:</b> ' + protectora.telefono;
+				telP.innerHTML = protectora.telefono;
 				let emailP = document.createElement("p");
-				emailP.innerHTML = '<b>Correo electrónico:</b> ' + protectora.email;
+				emailP.innerHTML = protectora.email;
 				divP = document.createElement("div");
 				divP.classList.add("divP");
 				divP.appendChild(denP);
