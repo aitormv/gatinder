@@ -115,9 +115,9 @@ img {
 .divP {
 	position: absolute;
 	display: flex-item;
-	top: 695px;
-	left: 815px;
-	border: 4.5px solid #429EA6;
+	top: 692.5px;
+	left: 812.5px;
+	border: 5px solid #429EA6;
 	border-radius: 25px;
 	padding: 0;
 	margin: 15px;
