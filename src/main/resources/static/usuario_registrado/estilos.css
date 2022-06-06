@@ -115,15 +115,20 @@ img {
 .divP {
 	position: absolute;
 	display: flex-item;
-	top: 670px;
-	left: 770px;
+	top: 690px;
+	left: 790px;
 	border: 3px solid #429EA6;
 	border-radius: 25px;
 	padding: 0;
 	margin: 15px;
 	text-align: center;
 	font-size: 10px;
-	background-color: #CC998D, 0.5;
+	background-color: #CC998D;
+	opacity: 0.5;
+}
+
+.divP p {
+	opacity: 1;
 }
 
 .contenedor-buscar {
