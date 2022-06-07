@@ -18,8 +18,8 @@ window.onload = function() {
 		let respuesta = await fetch(`/api/usuarios/encontrarPorUsuario?nombreUsuario=${nombreUsuario}`);
 		let usuario = await respuesta.json();
 		if (usuario.rol.idrol == 21) {
-			panelControl.style.display = "flex";
-			panelControlDesplegable.style.display = "flex";
+			panelControl.style.display = "block";
+			panelControlDesplegable.style.display = "block";
 		}
 		else {
 			panelControl.style.display = "none";

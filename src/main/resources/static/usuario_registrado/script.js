@@ -51,10 +51,10 @@ window.onload = function() {
 		titulo.innerHTML = 'Gatos adoptados y en acogida';
 		for (g of seleccion) {
 			let nombre = document.createElement("span");
-			nombre.innerHTML = `<b>${g.nombre}</b> : `;
+			nombre.innerHTML = `<b>${g.nombre}</b> - `;
 			let acogidoAdoptado = document.createElement("span");
-			if (g.acogido) acogidoAdoptado.innerHTML = '<b>Acogido</b> <i class="fas fa-tent fa-lg"></i><br>';
-			if (g.adoptado) acogidoAdoptado.innerHTML = '<b>Adoptado</b> <i class="fas fa-person-shelter fa-lg"></i><br>';
+			if (g.acogido) acogidoAdoptado.innerHTML = '<b>Acogido</b>';
+			if (g.adoptado) acogidoAdoptado.innerHTML = '<b>Adoptado</b>';
 			divGatosUsuario.appendChild(nombre);
 			divGatosUsuario.appendChild(acogidoAdoptado);
 		}
