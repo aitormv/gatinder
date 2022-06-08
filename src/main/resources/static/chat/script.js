@@ -22,7 +22,7 @@ window.onload = function () {
 		if (rol == 1) {
 			let respuestaU = await fetch(`/api/usuarios/encontrarPorUsuario?nombreUsuario=${nombreUsuario}`);
 			let usuario = await respuestaU.json();
-			username.innerHTML = 'Bienvenido, ' + usuario.nombreUsuario;
+			username.innerHTML = 'Conectado como ' + usuario.nombreUsuario;
 			if (nombreUsuarioProtectora == null) return;
 			destinatario = nombreUsuarioProtectora;
 			nombreDestinatario.innerHTML = 'Estás hablando con ' + destinatario;
@@ -31,7 +31,7 @@ window.onload = function () {
 		if (rol == 11) {
 			let respuestaP = await fetch(`/api/protectoras/encontrarPorUsuario?nombreUsuario=${nombreUsuario}`);
 			let protectora = await respuestaP.json();
-			username.innerHTML = 'Bienvenido, ' + protectora.nombreUsuario;
+			username.innerHTML = 'Conectado como ' + protectora.nombreUsuario;
 			destinatario = "";
 		}
 	
