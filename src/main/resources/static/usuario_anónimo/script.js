@@ -64,7 +64,7 @@ window.onload = function() {
 
 	document.querySelector(".prev").addEventListener("click", function moverFichasPrev() {
 		if (index == 1) return;
-		contenedorMostrar.style.right = parseInt(contenedorMostrar.style.right || 0) - 1575 + "px";
+		contenedorMostrar.style.right = parseInt(contenedorMostrar.style.right || 0) - 1580 + "px";
 		index--;
 	});
 
@@ -74,7 +74,7 @@ window.onload = function() {
 
 	document.querySelector(".next").addEventListener("click", function moverFichasNext() {
 		if (index == numeroFichas) return;
-		contenedorMostrar.style.right = parseInt(contenedorMostrar.style.right || 0) + 1575 + "px";
+		contenedorMostrar.style.right = parseInt(contenedorMostrar.style.right || 0) + 1580 + "px";
 		index++;
 	});
 

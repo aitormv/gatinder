@@ -16,7 +16,7 @@ button {
 }
 
 h1, h2, h3, p {
-	margin: 55px;
+	margin: 30px;
 	text-align: center;
 }
 
@@ -93,10 +93,13 @@ img {
 	cursor: pointer;
 }
 
-.presentacion {
+.presentacion h1, h2, h3, p {
 	display: flex;
 	flex-direction: column;
+	margin: 55px;
 }
+
+.presentacion
 
 .presentacion h1 {
 	font-size: 50px;
@@ -115,7 +118,7 @@ img {
 }
 
 .footer {
-	height: 150px;
+	height: 250px;
 	padding: 15px;
 	border-radius: 50% 50% 0 0/50px;
 	color: #ECEBE4;
