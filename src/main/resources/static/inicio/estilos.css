@@ -15,6 +15,11 @@ button {
 	background-color: #ECEBE4;
 }
 
+h1, h2, h3, p {
+	margin: 30px;
+	text-align: center;
+}
+
 h2 {
 	padding-top: 37.5px;
 	border-top: solid 3.5px #ECEBE4;

@@ -178,7 +178,7 @@ img {
 
 .prev, .next {
 	position: absolute;
-	top: 550px;
+	top: 500px;
 	width: auto;
 	padding: 15px;
 	border-radius: 0 3px 3px 0;

@@ -50,7 +50,7 @@ h1, h2, h3 {
 	font-family: 'Shizuru', cursive;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, h6, p {
 	margin: 20px;
 	text-align: center;
 }
