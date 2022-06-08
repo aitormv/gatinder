@@ -52,8 +52,8 @@ window.onload = function () {
 			stompClient.subscribe("/sala/recibirMensaje", function recibirMensaje(mensajeRecibido) {
 		    	var mensaje = JSON.parse(mensajeRecibido.body);
 				if (mensaje.enviadoPor == nombreUsuario) return;
-				if (rol == 1 && mensaje.enviadoA == nombreUsuario) mostrarMensajesRecibidos(mensaje);
-				if (rol == 11 && mensaje.enviadoA == nombreUsuario) return;
+				if (rol == 1 || rol == 11 && mensaje.enviadoA == nombreUsuario) mostrarMensajesRecibidos(mensaje);
+				if (rol == 11 && mensaje.enviadoA != nombreUsuario) return;
 				mostrarMensajesRecibidos(mensaje);
 			});
 			

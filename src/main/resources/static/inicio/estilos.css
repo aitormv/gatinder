@@ -16,7 +16,7 @@ button {
 }
 
 h1, h2, h3, p {
-	margin: 30px;
+	margin: 55px;
 	text-align: center;
 }
 
@@ -93,13 +93,10 @@ img {
 	cursor: pointer;
 }
 
-.presentacion h1, h2, h3, p {
+.presentacion {
 	display: flex;
 	flex-direction: column;
-	margin: 55px;
 }
-
-.presentacion
 
 .presentacion h1 {
 	font-size: 50px;
