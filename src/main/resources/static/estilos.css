@@ -2,6 +2,7 @@
 
 /* Josh's Custom CSS Reset */
 /* https://www.joshwcomeau.com/css/custom-css-reset/ */
+
 *, *::before, *::after {
 	box-sizing: border-box;
 }
@@ -37,6 +38,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* Estilos generales del documento y los títulos */
+
 html {
 	width: 100%;
 	margin: none;
@@ -56,12 +58,13 @@ h1, h2, h3, h6, p {
 }
 
 /* Estilos generales del menú superior */
+
 .menu ul {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin: auto;
-	padding: 4.9px;
+	padding: 5px;
 	text-align: center;
 	list-style: none;
 	font-weight: bold;
