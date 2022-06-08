@@ -53,8 +53,7 @@ window.onload = function () {
 		    	var mensaje = JSON.parse(mensajeRecibido.body);
 				if (mensaje.enviadoPor == nombreUsuario) return;
 				if (rol == 1 || rol == 11 && mensaje.enviadoA == nombreUsuario) mostrarMensajesRecibidos(mensaje);
-				if (rol == 11 && mensaje.enviadoA != nombreUsuario) return;
-				mostrarMensajesRecibidos(mensaje);
+				else return;
 			});
 			
 		});
