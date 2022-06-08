@@ -3,6 +3,23 @@ h1 {
     top: 150px;
 }
 
+button {
+	width: 150px;
+	height: 30px;
+	margin: 5px auto;
+	padding: 0 10px;
+	border: 2px solid #429EA6;
+	border-radius: 30px;
+	box-shadow: #429EA6 5px 5px 0 0;
+	color: #429EA6;
+	font-weight: 600;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	background-color: #ECEBE4;
+}
+
 .login {
     position: relative;
     display: flex;
