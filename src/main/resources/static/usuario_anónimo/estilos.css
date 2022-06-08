@@ -57,13 +57,12 @@ p, span {
 	border-radius: 40px;
 	padding: 15px;
 	padding-top: 240px;
-	margin: 40px 270px 40px 270px;
+	margin: 40px 390px 40px 390px;
 	text-align: center;
 	background-size: cover;
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	background-clip: padding-box;
-	margin: 40px 270px 40px 270px;
 }
 
 .prev, .next {
@@ -104,7 +103,8 @@ p, span {
 	}
 	.fichaGato {
 		width: 100%;
-		height: 800px;
+		height: 100%;
+		margin: 10px;
 	}
 	.prev, .next {
 		display: none;

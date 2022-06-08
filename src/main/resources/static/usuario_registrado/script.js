@@ -276,7 +276,7 @@ window.onload = function() {
 
 	document.querySelector(".prev").addEventListener("click", function moverFichasPrev() {
 		if (index == 1) return;
-		contenedorMostrar.style.right = parseInt(contenedorMostrar.style.right || 0) - 1335 + "px";
+		contenedorMostrar.style.right = parseInt(contenedorMostrar.style.right || 0) - 1575 + "px";
 		index--;
 		contenedorPrincipal.removeChild(divP);
 	});
@@ -285,7 +285,7 @@ window.onload = function() {
 
 	document.querySelector(".next").addEventListener("click", function moverFichasNext() {
 		if (index == numeroFichas) return;
-		contenedorMostrar.style.right = parseInt(contenedorMostrar.style.right || 0) + 1335 + "px";
+		contenedorMostrar.style.right = parseInt(contenedorMostrar.style.right || 0) + 1575 + "px";
 		index++;
 		contenedorPrincipal.removeChild(divP);
 	});
