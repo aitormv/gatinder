@@ -27,8 +27,7 @@ p {
 	font-size: 20px;
 }
 
-h1 {
+h1, h3 {
 	color: #ECEBE4;
-	font-family: 'Shizuru', cursive;
 	text-align: center;
 }
