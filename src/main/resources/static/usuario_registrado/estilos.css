@@ -87,7 +87,7 @@ img {
 	border-radius: 40px;
 	padding: 15px;
 	padding-top: 240px;
-	margin: 40px 390px 40px 390px;
+	margin: 120px 560px 120px 560px;
 	text-align: center;
 	background-size: cover;
 	background-position: 50% 50%;
@@ -114,8 +114,8 @@ img {
 .divP {
 	position: absolute;
 	display: flex-item;
-	top: 700px;
-	left: 820px;
+	top: 740px;
+	left: 1060px;
 	border-radius: 25px;
 	padding: 0;
 	margin: 15px;
@@ -177,7 +177,7 @@ img {
 
 .prev, .next {
 	position: absolute;
-	top: 500px;
+	top: 580px;
 	width: auto;
 	padding: 15px;
 	border-radius: 0 3px 3px 0;
@@ -201,7 +201,7 @@ img {
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
-@media ( max-width : 1060px) {
+@media ( max-width : 1320px) {
 	.contenedor-principal {
 		display: flex;
 		flex-direction: row;

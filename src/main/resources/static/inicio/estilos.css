@@ -122,7 +122,7 @@ img {
 	background: #CC998D;
 }
 
-@media ( max-width : 660px) {
+@media ( max-width : 700px) {
 	.menu ul {
 		display: none;
 	}

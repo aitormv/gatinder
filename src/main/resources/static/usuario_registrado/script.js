@@ -53,8 +53,8 @@ window.onload = function() {
 			let nombre = document.createElement("span");
 			nombre.innerHTML = `<b>${g.nombre}</b> - `;
 			let acogidoAdoptado = document.createElement("span");
-			if (g.acogido) acogidoAdoptado.innerHTML = '<b>Acogido</b>';
-			if (g.adoptado) acogidoAdoptado.innerHTML = '<b>Adoptado</b>';
+			if (g.acogido) acogidoAdoptado.innerHTML = '<b>Acogido</b><br>';
+			if (g.adoptado) acogidoAdoptado.innerHTML = '<b>Adoptado</b><br>';
 			divGatosUsuario.appendChild(nombre);
 			divGatosUsuario.appendChild(acogidoAdoptado);
 		}
@@ -276,7 +276,7 @@ window.onload = function() {
 
 	document.querySelector(".prev").addEventListener("click", function moverFichasPrev() {
 		if (index == 1) return;
-		contenedorMostrar.style.right = parseInt(contenedorMostrar.style.right || 0) - 1580 + "px";
+		contenedorMostrar.style.right = parseInt(contenedorMostrar.style.right || 0) - 1920 + "px";
 		index--;
 		contenedorPrincipal.removeChild(divP);
 	});
@@ -285,7 +285,7 @@ window.onload = function() {
 
 	document.querySelector(".next").addEventListener("click", function moverFichasNext() {
 		if (index == numeroFichas) return;
-		contenedorMostrar.style.right = parseInt(contenedorMostrar.style.right || 0) + 1580 + "px";
+		contenedorMostrar.style.right = parseInt(contenedorMostrar.style.right || 0) + 1920 + "px";
 		index++;
 		contenedorPrincipal.removeChild(divP);
 	});

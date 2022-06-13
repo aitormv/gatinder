@@ -57,7 +57,7 @@ p, span {
 	border-radius: 40px;
 	padding: 15px;
 	padding-top: 240px;
-	margin: 40px 390px 40px 390px;
+	margin: 120px 560px 120px 560px;
 	text-align: center;
 	background-size: cover;
 	background-position: 50% 50%;
@@ -67,7 +67,7 @@ p, span {
 
 .prev, .next {
 	position: absolute;
-	top: 425px;
+	top: 480px;
 	width: auto;
 	margin-top: -20px;
 	padding: 15px;
@@ -92,7 +92,7 @@ p, span {
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
-@media ( max-width : 1060px) {
+@media ( max-width : 1320px) {
 	.contenedor-principal {
 		display: flex;
 		flex-direction: row;
