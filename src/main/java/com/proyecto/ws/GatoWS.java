@@ -69,7 +69,7 @@ public class GatoWS {
 	public ResponseEntity<?> actualizar(@RequestBody GatoDTO gato) {
 		try {
 			sg.save(new GatoVO(gato.getIdgato(), gato.getNombre(), gato.getSexo(), gato.getEdad(), gato.getDescripcion(),
-			gato.isAcogido(), gato.isAdoptado(), gato.getFoto(), su.findByNombreUsuario(gato.getNombreUsuario())));
+			gato.isAcogido(), gato.isAdoptado(), gato.getFoto(), su.findByNombreUsuario(gato.getNombreUsuario()), sp.findById(gato.getIdprotectora()).get()));
 			return new ResponseEntity<String>("Funciona", HttpStatus.CREATED);
 		} catch (DataIntegrityViolationException e) {
 			return new ResponseEntity<String>("Data exception", HttpStatus.BAD_REQUEST);
