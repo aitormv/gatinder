@@ -186,7 +186,6 @@ window.onload = function() {
 				ficha.foto.value = gato[0].foto;
 				ficha.nombre.value = gato[0].nombre;
 				ficha.sexo.value = gato[0].sexo;
-				ficha.nombreUsuario.value = gato[0].usuario["nombreUsuario"];
 				ficha.idprotectora .value = gato[0].protectora["idprotectora"];
 			});
 
