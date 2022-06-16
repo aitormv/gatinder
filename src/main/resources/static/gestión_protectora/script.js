@@ -187,9 +187,7 @@ window.onload = function() {
 				ficha.nombre.value = gato[0].nombre;
 				ficha.sexo.value = gato[0].sexo;
 				ficha.nombreUsuario.value = gato[0].usuario["nombreUsuario"];
-				ficha.idprotectora.value = gato[0].idprotectora;
-				console.log(ficha.idprotectora.value)
-				console.log(gato[0].idprotectora)
+				ficha.idprotectora = gato[0].protectora["idprotectora"];
 			});
 
 			// FUNCIÓN QUE RECOGE EL ID DEL GATO Y MUESTRA EL MENÚ DE CONFIRMACIÓN DE BORRADO
