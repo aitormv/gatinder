@@ -41,19 +41,6 @@ public class GatoVO {
 	@JoinColumn(name="idprotectora")
 	@JsonIgnoreProperties("gatos")
 	private ProtectoraVO protectora;
-	
-	public GatoVO(int idgato, String nombre, String sexo, int edad, String descripcion, boolean acogido, boolean adoptado, String foto, UsuarioVO usuario) {
-		super();
-		this.idgato = idgato;
-		this.nombre = nombre;
-		this.sexo = sexo;
-		this.edad = edad;
-		this.descripcion = descripcion;
-		this.acogido = acogido;
-		this.adoptado = adoptado;
-		this.foto = foto;
-		this.usuario = usuario;
-	}
 
 	@Override
 	public String toString() {
